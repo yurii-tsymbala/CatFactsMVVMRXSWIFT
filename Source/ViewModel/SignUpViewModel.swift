@@ -54,53 +54,17 @@ class SignUpViewModel: SignUpViewModelType {
   var onFinish = PublishSubject<Void>()
 
   func signUp() {
-  userDefaultsService.signUp(withEmail: emailInput.value,
-                             withPassword: passwordInput.value,
-                             withPasswordConfirm: passwordConfirmInput.value) { [weak self] userDefaultsServiceResult in
-                              switch userDefaultsServiceResult {
-                              case .success(_):
-                                print("success and go to next vc")
-                                // go to next vc
-                              case .failure(let error):
-                                print("Error = \(error)")
-                              }
+    userDefaultsService.signUp(withEmail: emailInput.value,
+                               withPassword: passwordInput.value,
+                               withPasswordConfirm: passwordConfirmInput.value) { [weak self] userDefaultsServiceResult in
+                                guard let strongSelf = self else {return}
+                                switch userDefaultsServiceResult {
+                                case .success(_):
+                                  strongSelf.onFinish.onNext(())
+                                case .failure(let error):
+                                  print("Error = \(error.rawValue)") // закинути ці дані в алерт і презентнути
+                                }
     }
-
-    
-    //    authService.signUp(
-    //      withName: nameInput.value,
-    //      withEmail: emailInput.value,
-    //      withPassword: passwordInput.value,
-    //      withUserImg: userImg.value,
-    //      completion: { [weak self] authResult in
-    //        guard let strongSelf = self else { return }
-    //        switch authResult {
-    //        case .success(let user):
-    //          guard let userImg = strongSelf.userImg.value, let userId = user.id else {
-    //            Logger.error("userId or userImg = empty -> authResult error")
-    //            return
-    //          }
-    //          strongSelf.imageService.uploadImage(userImg, identifire: userId, completion: { (imgResult) in
-    //            switch imgResult {
-    //            case .success(let url):
-    //              let stringURL = url.absoluteString
-    //              user.avatarImgURL = stringURL
-    //              strongSelf.userService.update(user, completion: { (userResult) in
-    //                switch userResult {
-    //                case .success:
-    //                  strongSelf.onFinish.onNext(())
-    //                case .failure:
-    //                  Logger.error("update user error"); return
-    //                }
-    //              })
-    //            case .failure:
-    //              Logger.error("imgResult error"); return
-    //            }
-    //          })
-    //        case .failure:
-    //          Logger.error(authResult)
-    //        }
-    //    })
   }
 }
 
