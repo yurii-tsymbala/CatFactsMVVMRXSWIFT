@@ -27,7 +27,6 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4B-70-veU" customClass="CustomButton" customModule="CatFacts" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
-                            <color key="backgroundColor" red="0.31763832040000001" green="0.38800580159999998" blue="0.86441466970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="08M-AC-zv3"/>
                             </constraints>
@@ -37,7 +36,6 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNK-k4-GMN" customClass="CustomButton" customModule="CatFacts" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="57" width="345" height="50"/>
-                            <color key="backgroundColor" red="0.31763832040000001" green="0.38800580159999998" blue="0.86441466970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="VLR-1y-SW0"/>
                             </constraints>

@@ -213,11 +213,11 @@
 			isa = PBXGroup;
 			children = (
 				4BE7205521DFB361001D952C /* Application */,
-				4B38446B21DFB75E0064F731 /* ViewModel */,
-				4B38446A21DFB7580064F731 /* Model */,
-				4B38446921DFB7490064F731 /* View */,
 				4B38446621DFB7150064F731 /* Utils */,
 				4B38446321DFB6650064F731 /* Networking */,
+				4B38446A21DFB7580064F731 /* Model */,
+				4B38446921DFB7490064F731 /* View */,
+				4B38446B21DFB75E0064F731 /* ViewModel */,
 			);
 			path = Source;
 			sourceTree = "<group>";

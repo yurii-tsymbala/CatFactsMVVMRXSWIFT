@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SignUpViewController: UIViewController, KeyboardContentAdjustable { // fix costraints
+class SignUpViewController: UIViewController, KeyboardContentAdjustable {
   @IBOutlet private weak var userEmailTextField: CustomTextField!
   @IBOutlet private weak var userPasswordTextField: CustomTextField!
   @IBOutlet private weak var userPasswordConfirmTextField: CustomTextField!
@@ -20,7 +20,6 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable { // fix
   private var alert: UIAlertController?
   private var viewModel: SignUpViewModel!
   private let disposeBag = DisposeBag()
-  private let imagePicker = UIImagePickerController()
 
   convenience init(viewModel: SignUpViewModel) {
     self.init()

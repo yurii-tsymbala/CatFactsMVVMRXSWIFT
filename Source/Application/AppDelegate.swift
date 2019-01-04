@@ -18,21 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
 
-  func viewSetup() {
+  private func viewSetup() {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.backgroundColor = ViewConfig.Colors.background
-    UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key(
-      rawValue: NSAttributedString.Key.foregroundColor.rawValue): ViewConfig.Colors.white]
-    UITabBarItem.appearance().setTitleTextAttributes(
-      [NSAttributedString.Key.foregroundColor: ViewConfig.Colors.textWhite], for: .normal)
-    UITabBarItem.appearance().setTitleTextAttributes(
-      [NSAttributedString.Key.foregroundColor: ViewConfig.Colors.blue], for: .selected)
-
     rootViewController = RootViewController(userDefaultsService: UserDefaultsService())
-
     window?.rootViewController = rootViewController
     window?.makeKeyAndVisible()
   }
-
 }
 
