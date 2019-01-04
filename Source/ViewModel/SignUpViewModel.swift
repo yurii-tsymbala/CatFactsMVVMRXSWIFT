@@ -34,11 +34,11 @@ class SignUpViewModel: SignUpViewModelType {
     static let passwordConfirmPlaceholder = NSLocalizedString("Confirm Password", comment: "")
   }
 
-    private let userDefaultsService: UserDefaultsService
+  private let userDefaultsService: UserDefaultsService
 
-    init(userDefaultsService: UserDefaultsService) {
-      self.userDefaultsService = userDefaultsService
-    }
+  init(userDefaultsService: UserDefaultsService) {
+    self.userDefaultsService = userDefaultsService
+  }
 
   let emailPlaceholder = Strings.emailPlaceholder
   let passwordPlaceholder = Strings.passwordPlaceholder
@@ -54,6 +54,19 @@ class SignUpViewModel: SignUpViewModelType {
   var onFinish = PublishSubject<Void>()
 
   func signUp() {
+  userDefaultsService.signUp(withEmail: emailInput.value,
+                             withPassword: passwordInput.value,
+                             withPasswordConfirm: passwordConfirmInput.value) { [weak self] userDefaultsServiceResult in
+                              switch userDefaultsServiceResult {
+                              case .success(_):
+                                print("success and go to next vc")
+                                // go to next vc
+                              case .failure(let error):
+                                print("Error = \(error)")
+                              }
+    }
+
+    
     //    authService.signUp(
     //      withName: nameInput.value,
     //      withEmail: emailInput.value,
