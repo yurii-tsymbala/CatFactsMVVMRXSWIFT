@@ -26,12 +26,12 @@ class SignInViewModel: SignInViewModelType {
     static let emailPlaceholder = NSLocalizedString("Email", comment: "")
     static let passwordPlaceholder = NSLocalizedString("Password", comment: "")
   }
-
-  private let authService: AuthServiceType
-
-  init(authService: AuthServiceType) {
-    self.authService = authService
-  }
+  //
+  //  private let authService: AuthServiceType
+  //
+  //  init(authService: AuthServiceType) {
+  //    self.authService = authService
+  //  }
 
   let emailPlaceholder = Strings.emailPlaceholder
   let passwordPlaceholder = Strings.passwordPlaceholder
@@ -41,18 +41,18 @@ class SignInViewModel: SignInViewModelType {
   var onFinish = PublishSubject<Void>()
 
   func signIn() {
-    authService.signIn(
-      withEmail: emailInput.value,
-      withPassword: passwordInput.value,
-      completion: { [weak self] authResult in
-        guard let strongSelf = self else { return }
-        switch authResult {
-        case .success:
-          strongSelf.onFinish.onNext(())
-        case .failure:
-          Logger.error(authResult.error.debugDescription)
-        }
-    })
+    //    authService.signIn(
+    //      withEmail: emailInput.value,
+    //      withPassword: passwordInput.value,
+    //      completion: { [weak self] authResult in
+    //        guard let strongSelf = self else { return }
+    //        switch authResult {
+    //        case .success:
+    //          strongSelf.onFinish.onNext(())
+    //        case .failure:
+    //          Logger.error(authResult.error.debugDescription)
+    //        }
+    //    })
   }
 }
 

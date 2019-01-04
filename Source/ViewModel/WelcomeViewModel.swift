@@ -34,12 +34,10 @@ class WelcomeViewModel: WelcomeViewModelType {
   let signUpButtonTitle = Strings.signUpButtonTitle
 
   func signIn() {
-    showSignInSubject.onNext(SignInViewModel(authService: AuthService(userService: UserService())))
+    showSignInSubject.onNext(SignInViewModel())
   }
   func signUp() {
-    showSignUpSubject.onNext(SignUpViewModel(authService: AuthService(userService: UserService()),
-                                             imageService: ImageService(),
-                                             userService: UserService()))
+    showSignUpSubject.onNext(SignUpViewModel())
   }
 }
 

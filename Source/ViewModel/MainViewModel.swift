@@ -12,5 +12,5 @@ protocol MainViewModelType {
 }
 
 class MainViewModel : MainViewModelType {
-
+  
 }
