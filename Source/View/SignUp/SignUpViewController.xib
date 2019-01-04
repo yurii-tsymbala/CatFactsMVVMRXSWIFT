@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="signUpButton" destination="ye8-1O-GRK" id="Dsg-Kb-arC"/>
                 <outlet property="userEmailTextField" destination="PQ7-Wz-cJD" id="Qsg-9x-pBd"/>
-                <outlet property="userNameTextField" destination="Q2T-gP-M67" id="xdg-7o-DWf"/>
+                <outlet property="userPasswordConfirmTextField" destination="Q2T-gP-M67" id="xdg-7o-DWf"/>
                 <outlet property="userPasswordTextField" destination="S9e-c0-Lxm" id="ryX-oh-OCb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,72 +24,52 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="MeJ-RK-cW7">
-                    <rect key="frame" x="25" y="253" width="364" height="230"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="R1P-Rd-y7s">
+                    <rect key="frame" x="30" y="273" width="354" height="190"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="X5z-sh-ohM">
-                            <rect key="frame" x="0.0" y="0.0" width="364" height="230"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="R1P-Rd-y7s">
-                                    <rect key="frame" x="0.0" y="0.0" width="364" height="140"/>
-                                    <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q2T-gP-M67" customClass="CustomTextField" customModule="CatFacts" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="364" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="SAN-Sd-tcx"/>
-                                            </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQ7-Wz-cJD" customClass="CustomTextField" customModule="CatFacts" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="50" width="364" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="3Kn-Vz-Jbj"/>
-                                            </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9e-c0-Lxm" customClass="CustomTextField" customModule="CatFacts" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="100" width="364" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="0Jt-On-pXJ"/>
-                                            </constraints>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </subviews>
-                                </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-1O-GRK" customClass="CustomButton" customModule="CatFacts" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="190" width="364" height="40"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="sXb-ce-pfa"/>
-                                    </constraints>
-                                    <state key="normal" title="Sign Up"/>
-                                </button>
-                            </subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQ7-Wz-cJD" customClass="CustomTextField" customModule="CatFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="R1P-Rd-y7s" secondAttribute="trailing" id="0jt-3t-GKN"/>
-                                <constraint firstItem="R1P-Rd-y7s" firstAttribute="leading" secondItem="X5z-sh-ohM" secondAttribute="leading" id="Hjy-Rs-Pws"/>
-                                <constraint firstAttribute="trailing" secondItem="ye8-1O-GRK" secondAttribute="trailing" id="Mmq-dX-bvI"/>
-                                <constraint firstItem="ye8-1O-GRK" firstAttribute="leading" secondItem="X5z-sh-ohM" secondAttribute="leading" id="MtM-ST-StJ"/>
+                                <constraint firstAttribute="height" constant="40" id="3Kn-Vz-Jbj"/>
                             </constraints>
-                        </stackView>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9e-c0-Lxm" customClass="CustomTextField" customModule="CatFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="50" width="354" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="0Jt-On-pXJ"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q2T-gP-M67" customClass="CustomTextField" customModule="CatFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="100" width="354" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="SAN-Sd-tcx"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-1O-GRK" customClass="CustomButton" customModule="CatFacts" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="150" width="354" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="sXb-ce-pfa"/>
+                            </constraints>
+                            <state key="normal" title="Sign Up"/>
+                        </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="X5z-sh-ohM" firstAttribute="leading" secondItem="MeJ-RK-cW7" secondAttribute="leading" id="HBY-Kl-a6G"/>
-                        <constraint firstAttribute="trailing" secondItem="X5z-sh-ohM" secondAttribute="trailing" id="jGV-kC-VK5"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="MeJ-RK-cW7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FIv-fF-N8f"/>
-                <constraint firstItem="MeJ-RK-cW7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="ekS-PE-1cN"/>
-                <constraint firstItem="MeJ-RK-cW7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lZd-hL-pvT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MeJ-RK-cW7" secondAttribute="trailing" constant="25" id="qWd-pi-WQO"/>
+                <constraint firstItem="R1P-Rd-y7s" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="MI9-D0-iCa"/>
+                <constraint firstItem="R1P-Rd-y7s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="i9V-jp-AXY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R1P-Rd-y7s" secondAttribute="trailing" constant="30" id="sqL-SI-qUz"/>
+                <constraint firstItem="R1P-Rd-y7s" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zYZ-Po-FuE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-41" y="21"/>

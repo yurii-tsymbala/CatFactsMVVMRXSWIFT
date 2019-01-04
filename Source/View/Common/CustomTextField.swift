@@ -17,8 +17,6 @@ class CustomTextField: UITextField {
     static let caretColor = ViewConfig.Colors.white
   }
 
-  let padding = UIEdgeInsets(top: 0, left: 7, bottom: 0, right: 5)
-
   private var customPlaceholder: String? = ""
 
   override var placeholder: String? {
@@ -40,18 +38,6 @@ class CustomTextField: UITextField {
     super.init(coder: aDecoder)
     setup()
   }
-
-  //  override open func textRect(forBounds bounds: CGRect) -> CGRect {
-  //    return UIEdgeInsetsInsetRect(bounds, padding)
-  //  }
-  //
-  //  override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-  //    return UIEdgeInsetsInsetRect(bounds, padding)
-  //  }
-  //
-  //  override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-  //    return UIEdgeInsetsInsetRect(bounds, padding)
-  //  }
 
   private func setup() {
     backgroundColor = Constants.backgroundColor

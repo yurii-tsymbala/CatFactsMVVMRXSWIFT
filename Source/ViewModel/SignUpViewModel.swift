@@ -11,39 +11,27 @@ import RxSwift
 import RxCocoa
 
 protocol SignUpViewModelType {
-  var namePlaceholder: String { get }
   var emailPlaceholder: String { get }
-  var userFotoLabelText: String { get }
   var passwordPlaceholder: String { get }
+  var passwordConfirmPlaceholder: String { get }
   var signUpBtnTitle: String { get }
-
   var alertTitle: String { get }
-  var alertMessageTitle: String { get }
-  var alerDefaultActionTitle: String { get }
-  var alerGalarytActionTitle: String { get }
-  var alertCancelActionTitle: String { get }
-
-  var nameInput: BehaviorRelay<String> { get }
+  var alertMessage: String { get }
   var emailInput: BehaviorRelay<String> { get }
   var passwordInput: BehaviorRelay<String> { get }
-  var userImg: BehaviorRelay<UIImage?> { get }
+  var passwordConfirmInput: BehaviorRelay<String> { get }
   var onFinish: PublishSubject<Void> { get }
   func signUp()
 }
 
 class SignUpViewModel: SignUpViewModelType {
   private struct Strings {
-    static let alertTitle = NSLocalizedString("Foto", comment: "")
-    static let alertMessageTitle = NSLocalizedString("Select the option to upload your profile photo", comment: "")
-    static let alerDefaultActionTitle = NSLocalizedString("Select photos from default", comment: "")
-    static let alerGalarytActionTitle = NSLocalizedString("Select photos from photo galary", comment: "")
-    static let alertCancelActionTitle = NSLocalizedString("Cancel", comment: "")
-
+    static let alertTitle = NSLocalizedString("Error", comment: "")
+    static let alertMessage = NSLocalizedString("Bad Credentials", comment: "")
     static let btnTitle = NSLocalizedString("Sign Up", comment: "")
-    static let userFotoLabelText = NSLocalizedString("Tap for edit avatar", comment: "")
-    static let namePlaceholder = NSLocalizedString("Name", comment: "")
     static let emailPlaceholder = NSLocalizedString("Email", comment: "")
     static let passwordPlaceholder = NSLocalizedString("Password", comment: "")
+    static let passwordConfirmPlaceholder = NSLocalizedString("Confirm Password", comment: "")
   }
 
   //  private let authService: AuthServiceType
@@ -52,22 +40,17 @@ class SignUpViewModel: SignUpViewModelType {
   //    self.authService = authService
   //  }
 
-  let namePlaceholder = Strings.namePlaceholder
   let emailPlaceholder = Strings.emailPlaceholder
   let passwordPlaceholder = Strings.passwordPlaceholder
-  let userFotoLabelText = Strings.userFotoLabelText
+  let passwordConfirmPlaceholder = Strings.passwordConfirmPlaceholder
   let signUpBtnTitle = Strings.btnTitle
 
   var alertTitle = Strings.alertTitle
-  var alertMessageTitle = Strings.alertMessageTitle
-  var alerDefaultActionTitle = Strings.alerDefaultActionTitle
-  var alerGalarytActionTitle = Strings.alerGalarytActionTitle
-  var alertCancelActionTitle = Strings.alertCancelActionTitle
+  var alertMessage = Strings.alertMessage
 
-  var nameInput = BehaviorRelay<String>(value: "")
   var emailInput = BehaviorRelay<String>(value: "")
   var passwordInput = BehaviorRelay<String>(value: "")
-  var userImg = BehaviorRelay<UIImage?>(value: nil)
+  var passwordConfirmInput = BehaviorRelay<String>(value: "")
   var onFinish = PublishSubject<Void>()
 
   func signUp() {

@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 
 class SignUpViewController: UIViewController, KeyboardContentAdjustable { // fix costraints
-  @IBOutlet private weak var userNameTextField: CustomTextField!
   @IBOutlet private weak var userEmailTextField: CustomTextField!
   @IBOutlet private weak var userPasswordTextField: CustomTextField!
+  @IBOutlet private weak var userPasswordConfirmTextField: CustomTextField!
   @IBOutlet private weak var signUpButton: CustomButton!
 
   var doneCallback: (() -> Void)?
@@ -43,19 +43,19 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable { // fix
 
   private func setupView() {
     view.backgroundColor = ViewConfig.Colors.background
-    userNameTextField.autocorrectionType = .no
+    userPasswordConfirmTextField.autocorrectionType = .no
     userEmailTextField.autocorrectionType = .no
     userPasswordTextField.autocorrectionType = .no
-    userNameTextField.placeholder = viewModel.namePlaceholder
+    userPasswordConfirmTextField.placeholder = viewModel.passwordConfirmPlaceholder
     userEmailTextField.placeholder = viewModel.emailPlaceholder
     userPasswordTextField.placeholder = viewModel.passwordPlaceholder
     userEmailTextField.keyboardType = .emailAddress
     userPasswordTextField.isSecureTextEntry = true
     signUpButton.addTarget(self, action: #selector(pressedSignUpButton), for: .touchUpInside)
-    userNameTextField.delegate = self
+    userPasswordConfirmTextField.delegate = self
     userEmailTextField.delegate = self
     userPasswordTextField.delegate = self
-    userNameTextField.tag = 0
+    userPasswordConfirmTextField.tag = 0
     userEmailTextField.tag = 1
     userPasswordTextField.tag = 2
   }
@@ -67,9 +67,9 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable { // fix
   }
 
   private func observeViewModel() {
-    userNameTextField.rx.text
+    userPasswordConfirmTextField.rx.text
       .orEmpty
-      .bind(to: viewModel.nameInput)
+      .bind(to: viewModel.passwordConfirmInput)
       .disposed(by: disposeBag)
     userEmailTextField.rx.text
       .orEmpty
@@ -111,9 +111,9 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable { // fix
 
   private func setupAlertController() {
     alert = UIAlertController(title: viewModel.alertTitle,
-                              message: viewModel.alertMessageTitle,
+                              message: viewModel.alertMessage,
                               preferredStyle: .actionSheet)
-    let cancelAction = UIAlertAction(title: viewModel.alertCancelActionTitle, style: .cancel, handler: nil)
+    let cancelAction = UIAlertAction(title: "viewModel.Cancel", style: .cancel, handler: nil)
     guard let alert = self.alert else { return }
     alert.addAction(cancelAction)
   }
