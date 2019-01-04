@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="FamilyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextField" destination="GTd-r3-h8s" id="TaH-GT-TzA"/>
+                <outlet property="passwordTextField" destination="f8C-qN-A0P" id="uI8-pJ-yu3"/>
+                <outlet property="signInButton" destination="YwQ-rj-tuV" id="ozy-7g-ZGb"/>
+                <outlet property="view" destination="iN0-l3-epB" id="vIQ-0P-JqW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oRx-gf-KO3">
+                    <rect key="frame" x="30" y="258.5" width="315" height="150"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GTd-r3-h8s" customClass="CustomTextField" customModule="FamilyApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="lhX-XK-qkE"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="4dd-C8-VjA"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f8C-qN-A0P" customClass="CustomTextField" customModule="FamilyApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="55" width="315" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="HdI-k6-beK"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="gME-Ta-3ap"/>
+                            </connections>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwQ-rj-tuV" customClass="CustomButton" customModule="FamilyApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="110" width="315" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="19X-B2-8GI"/>
+                            </constraints>
+                            <state key="normal" title="Sign in"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="YwQ-rj-tuV" firstAttribute="leading" secondItem="oRx-gf-KO3" secondAttribute="leading" id="5ry-Wc-NzY"/>
+                        <constraint firstAttribute="trailing" secondItem="f8C-qN-A0P" secondAttribute="trailing" id="9h2-8G-11r"/>
+                        <constraint firstAttribute="trailing" secondItem="YwQ-rj-tuV" secondAttribute="trailing" id="LRH-92-oud"/>
+                        <constraint firstItem="f8C-qN-A0P" firstAttribute="leading" secondItem="oRx-gf-KO3" secondAttribute="leading" id="PpM-jj-sCC"/>
+                        <constraint firstItem="GTd-r3-h8s" firstAttribute="leading" secondItem="oRx-gf-KO3" secondAttribute="leading" id="Sbk-a4-JVS"/>
+                        <constraint firstAttribute="trailing" secondItem="GTd-r3-h8s" secondAttribute="trailing" id="wYq-UY-mdZ"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oRx-gf-KO3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eQu-hc-GuY"/>
+                <constraint firstItem="oRx-gf-KO3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="i5m-TF-5hF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oRx-gf-KO3" secondAttribute="trailing" constant="30" id="piQ-WT-2J6"/>
+                <constraint firstItem="oRx-gf-KO3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="pr1-mV-R9J"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-324.5" y="-5.5"/>
+        </view>
+    </objects>
+</document>

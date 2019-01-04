@@ -15,20 +15,20 @@
 		4B38447121DFB7DB0064F731 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447021DFB7DB0064F731 /* SignInViewModel.swift */; };
 		4B38447321DFB7F80064F731 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447221DFB7F80064F731 /* UserDefaultsService.swift */; };
 		4B38447521DFB8130064F731 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447421DFB8130064F731 /* User.swift */; };
-		4B38447921DFBD350064F731 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447721DFBD350064F731 /* WelcomeViewController.swift */; };
-		4B38447A21DFBD350064F731 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B38447821DFBD350064F731 /* WelcomeViewController.xib */; };
-		4B38448021DFBD9A0064F731 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447E21DFBD9A0064F731 /* SignInViewController.swift */; };
-		4B38448121DFBD9A0064F731 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B38447F21DFBD9A0064F731 /* SignInViewController.xib */; };
-		4B38448421DFBDB80064F731 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38448221DFBDB70064F731 /* SignUpViewController.swift */; };
-		4B38448521DFBDB80064F731 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B38448321DFBDB70064F731 /* SignUpViewController.xib */; };
 		4B38448821DFBDD40064F731 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38448621DFBDD40064F731 /* MainViewController.swift */; };
 		4B38448921DFBDD40064F731 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B38448721DFBDD40064F731 /* MainViewController.xib */; };
-		4B38449021DFBED30064F731 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38448C21DFBED30064F731 /* CustomButton.swift */; };
-		4B38449121DFBED30064F731 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38448D21DFBED30064F731 /* CustomTextField.swift */; };
-		4B38449221DFBED30064F731 /* ViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38448E21DFBED30064F731 /* ViewConfig.swift */; };
-		4B38449421DFBEDD0064F731 /* KeyboardContentAdjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449321DFBEDD0064F731 /* KeyboardContentAdjustable.swift */; };
 		4B38449721DFC89A0064F731 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449621DFC89A0064F731 /* RootViewController.swift */; };
 		4B38449921DFD25E0064F731 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449821DFD25E0064F731 /* MainViewModel.swift */; };
+		4B38449E21DFD6870064F731 /* KeyboardContentAdjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449D21DFD6870064F731 /* KeyboardContentAdjustable.swift */; };
+		4B3844A021DFD6930064F731 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449F21DFD6930064F731 /* CustomButton.swift */; };
+		4B3844A221DFD6A60064F731 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844A121DFD6A60064F731 /* CustomTextField.swift */; };
+		4B3844A421DFD6AE0064F731 /* ViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844A321DFD6AE0064F731 /* ViewConfig.swift */; };
+		4B3844A721DFD7FF0064F731 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844A521DFD7FE0064F731 /* SignInViewController.swift */; };
+		4B3844A821DFD7FF0064F731 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3844A621DFD7FE0064F731 /* SignInViewController.xib */; };
+		4B3844AB21DFD85C0064F731 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3844A921DFD85C0064F731 /* SignUpViewController.xib */; };
+		4B3844AC21DFD85C0064F731 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844AA21DFD85C0064F731 /* SignUpViewController.swift */; };
+		4B3844AF21DFD89E0064F731 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844AD21DFD89E0064F731 /* WelcomeViewController.swift */; };
+		4B3844B021DFD89E0064F731 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3844AE21DFD89E0064F731 /* WelcomeViewController.xib */; };
 		4B9248DD21DFB29D00873821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9248DC21DFB29D00873821 /* AppDelegate.swift */; };
 		4B9248DF21DFB29D00873821 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9248DE21DFB29D00873821 /* ViewController.swift */; };
 		4B9248E221DFB29D00873821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9248E021DFB29D00873821 /* Main.storyboard */; };
@@ -45,20 +45,20 @@
 		4B38447021DFB7DB0064F731 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		4B38447221DFB7F80064F731 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		4B38447421DFB8130064F731 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		4B38447721DFBD350064F731 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../../../../familyapp/Source/View/Welcome/WelcomeViewController.swift; sourceTree = "<group>"; };
-		4B38447821DFBD350064F731 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeViewController.xib; path = ../../../../familyapp/Source/View/Welcome/WelcomeViewController.xib; sourceTree = "<group>"; };
-		4B38447E21DFBD9A0064F731 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ../../../../familyapp/Source/View/SignIn/SignInViewController.swift; sourceTree = "<group>"; };
-		4B38447F21DFBD9A0064F731 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInViewController.xib; path = ../../../../familyapp/Source/View/SignIn/SignInViewController.xib; sourceTree = "<group>"; };
-		4B38448221DFBDB70064F731 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../../../../familyapp/Source/View/SignUp/SignUpViewController.swift; sourceTree = "<group>"; };
-		4B38448321DFBDB70064F731 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignUpViewController.xib; path = ../../../../familyapp/Source/View/SignUp/SignUpViewController.xib; sourceTree = "<group>"; };
 		4B38448621DFBDD40064F731 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4B38448721DFBDD40064F731 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		4B38448C21DFBED30064F731 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = ../../../../familyapp/Source/View/Common/CustomButton.swift; sourceTree = "<group>"; };
-		4B38448D21DFBED30064F731 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = ../../../../familyapp/Source/View/Common/CustomTextField.swift; sourceTree = "<group>"; };
-		4B38448E21DFBED30064F731 /* ViewConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewConfig.swift; path = ../../../../familyapp/Source/View/Common/ViewConfig.swift; sourceTree = "<group>"; };
-		4B38449321DFBEDD0064F731 /* KeyboardContentAdjustable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardContentAdjustable.swift; path = ../../../../familyapp/Source/View/Common/KeyboardContentAdjustable.swift; sourceTree = "<group>"; };
 		4B38449621DFC89A0064F731 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4B38449821DFD25E0064F731 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		4B38449D21DFD6870064F731 /* KeyboardContentAdjustable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardContentAdjustable.swift; sourceTree = "<group>"; };
+		4B38449F21DFD6930064F731 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		4B3844A121DFD6A60064F731 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		4B3844A321DFD6AE0064F731 /* ViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfig.swift; sourceTree = "<group>"; };
+		4B3844A521DFD7FE0064F731 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		4B3844A621DFD7FE0064F731 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		4B3844A921DFD85C0064F731 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		4B3844AA21DFD85C0064F731 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4B3844AD21DFD89E0064F731 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4B3844AE21DFD89E0064F731 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		4B9248D921DFB29D00873821 /* CatFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9248DC21DFB29D00873821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B9248DE21DFB29D00873821 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,8 +111,8 @@
 		4B38446921DFB7490064F731 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4B38449C21DFD6750064F731 /* Common */,
 				4B38449521DFC8800064F731 /* Root */,
-				4B38448A21DFBE8B0064F731 /* Common */,
 				4B38447D21DFBD810064F731 /* Main */,
 				4B38447C21DFBD6B0064F731 /* SignIn */,
 				4B38447B21DFBD5B0064F731 /* SignUp */,
@@ -145,8 +145,8 @@
 		4B38447621DFBD060064F731 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				4B38447721DFBD350064F731 /* WelcomeViewController.swift */,
-				4B38447821DFBD350064F731 /* WelcomeViewController.xib */,
+				4B3844AD21DFD89E0064F731 /* WelcomeViewController.swift */,
+				4B3844AE21DFD89E0064F731 /* WelcomeViewController.xib */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -154,8 +154,8 @@
 		4B38447B21DFBD5B0064F731 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				4B38448221DFBDB70064F731 /* SignUpViewController.swift */,
-				4B38448321DFBDB70064F731 /* SignUpViewController.xib */,
+				4B3844AA21DFD85C0064F731 /* SignUpViewController.swift */,
+				4B3844A921DFD85C0064F731 /* SignUpViewController.xib */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -163,8 +163,8 @@
 		4B38447C21DFBD6B0064F731 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				4B38447E21DFBD9A0064F731 /* SignInViewController.swift */,
-				4B38447F21DFBD9A0064F731 /* SignInViewController.xib */,
+				4B3844A521DFD7FE0064F731 /* SignInViewController.swift */,
+				4B3844A621DFD7FE0064F731 /* SignInViewController.xib */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -178,23 +178,23 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		4B38448A21DFBE8B0064F731 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				4B38449321DFBEDD0064F731 /* KeyboardContentAdjustable.swift */,
-				4B38448C21DFBED30064F731 /* CustomButton.swift */,
-				4B38448D21DFBED30064F731 /* CustomTextField.swift */,
-				4B38448E21DFBED30064F731 /* ViewConfig.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		4B38449521DFC8800064F731 /* Root */ = {
 			isa = PBXGroup;
 			children = (
 				4B38449621DFC89A0064F731 /* RootViewController.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		4B38449C21DFD6750064F731 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4B38449D21DFD6870064F731 /* KeyboardContentAdjustable.swift */,
+				4B38449F21DFD6930064F731 /* CustomButton.swift */,
+				4B3844A121DFD6A60064F731 /* CustomTextField.swift */,
+				4B3844A321DFD6AE0064F731 /* ViewConfig.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		4B9248D021DFB29D00873821 = {
@@ -315,11 +315,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B38448121DFBD9A0064F731 /* SignInViewController.xib in Resources */,
 				4B9248E721DFB29E00873821 /* LaunchScreen.storyboard in Resources */,
-				4B38447A21DFBD350064F731 /* WelcomeViewController.xib in Resources */,
+				4B3844B021DFD89E0064F731 /* WelcomeViewController.xib in Resources */,
+				4B3844AB21DFD85C0064F731 /* SignUpViewController.xib in Resources */,
 				4B9248E421DFB29E00873821 /* Assets.xcassets in Resources */,
-				4B38448521DFBDB80064F731 /* SignUpViewController.xib in Resources */,
+				4B3844A821DFD7FF0064F731 /* SignInViewController.xib in Resources */,
 				4B38448921DFBDD40064F731 /* MainViewController.xib in Resources */,
 				4B9248E221DFB29D00873821 /* Main.storyboard in Resources */,
 			);
@@ -383,25 +383,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B38448021DFBD9A0064F731 /* SignInViewController.swift in Sources */,
 				4B38448821DFBDD40064F731 /* MainViewController.swift in Sources */,
 				4B38449721DFC89A0064F731 /* RootViewController.swift in Sources */,
+				4B38449E21DFD6870064F731 /* KeyboardContentAdjustable.swift in Sources */,
 				4B9248DF21DFB29D00873821 /* ViewController.swift in Sources */,
-				4B38447921DFBD350064F731 /* WelcomeViewController.swift in Sources */,
-				4B38449121DFBED30064F731 /* CustomTextField.swift in Sources */,
 				4B38447121DFB7DB0064F731 /* SignInViewModel.swift in Sources */,
 				4B38446D21DFB7C30064F731 /* WelcomeViewModel.swift in Sources */,
+				4B3844AC21DFD85C0064F731 /* SignUpViewController.swift in Sources */,
 				4B9248DD21DFB29D00873821 /* AppDelegate.swift in Sources */,
-				4B38448421DFBDB80064F731 /* SignUpViewController.swift in Sources */,
+				4B3844A021DFD6930064F731 /* CustomButton.swift in Sources */,
+				4B3844A721DFD7FF0064F731 /* SignInViewController.swift in Sources */,
 				4B38447321DFB7F80064F731 /* UserDefaultsService.swift in Sources */,
-				4B38449221DFBED30064F731 /* ViewConfig.swift in Sources */,
+				4B3844A221DFD6A60064F731 /* CustomTextField.swift in Sources */,
 				4B38447521DFB8130064F731 /* User.swift in Sources */,
 				4B38449921DFD25E0064F731 /* MainViewModel.swift in Sources */,
 				4B38446821DFB7350064F731 /* Result.swift in Sources */,
 				4B38446F21DFB7CF0064F731 /* SignUpViewModel.swift in Sources */,
+				4B3844A421DFD6AE0064F731 /* ViewConfig.swift in Sources */,
 				4B38446521DFB6A70064F731 /* DownloadService.swift in Sources */,
-				4B38449021DFBED30064F731 /* CustomButton.swift in Sources */,
-				4B38449421DFBEDD0064F731 /* KeyboardContentAdjustable.swift in Sources */,
+				4B3844AF21DFD89E0064F731 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
