@@ -9,7 +9,6 @@
 import Foundation
 
 final class UserDefaultsService {
-
   private let userDefaults = UserDefaults.standard
 
   private enum Keys: String {
@@ -27,17 +26,5 @@ final class UserDefaultsService {
       userDefaults.synchronize()
     }
   }
-
-  var isUserInGroup: Bool {
-    get {
-      let isUserInGroup = userDefaults.bool(forKey: Keys.keyUserInGroup.rawValue)
-      return isUserInGroup
-    }
-    set(userGroupState) {
-      userDefaults.set(userGroupState, forKey: Keys.keyUserInGroup.rawValue)
-      userDefaults.synchronize()
-    }
-  }
-
 }
 

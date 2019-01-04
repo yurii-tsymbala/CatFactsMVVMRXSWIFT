@@ -29,6 +29,7 @@
 		4B3844AC21DFD85C0064F731 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844AA21DFD85C0064F731 /* SignUpViewController.swift */; };
 		4B3844AF21DFD89E0064F731 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844AD21DFD89E0064F731 /* WelcomeViewController.swift */; };
 		4B3844B021DFD89E0064F731 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3844AE21DFD89E0064F731 /* WelcomeViewController.xib */; };
+		4B3844B221DFE9AE0064F731 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844B121DFE9AE0064F731 /* AlertViewModel.swift */; };
 		4B9248DD21DFB29D00873821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9248DC21DFB29D00873821 /* AppDelegate.swift */; };
 		4B9248E421DFB29E00873821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B9248E321DFB29E00873821 /* Assets.xcassets */; };
 		4B9248E721DFB29E00873821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9248E521DFB29E00873821 /* LaunchScreen.storyboard */; };
@@ -57,6 +58,7 @@
 		4B3844AA21DFD85C0064F731 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4B3844AD21DFD89E0064F731 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4B3844AE21DFD89E0064F731 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		4B3844B121DFE9AE0064F731 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		4B9248D921DFB29D00873821 /* CatFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9248DC21DFB29D00873821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B9248E321DFB29E00873821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				4B38446E21DFB7CF0064F731 /* SignUpViewModel.swift */,
 				4B38447021DFB7DB0064F731 /* SignInViewModel.swift */,
 				4B38449821DFD25E0064F731 /* MainViewModel.swift */,
+				4B3844B121DFE9AE0064F731 /* AlertViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				4B3844A721DFD7FF0064F731 /* SignInViewController.swift in Sources */,
 				4B38447321DFB7F80064F731 /* UserDefaultsService.swift in Sources */,
 				4B3844A221DFD6A60064F731 /* CustomTextField.swift in Sources */,
+				4B3844B221DFE9AE0064F731 /* AlertViewModel.swift in Sources */,
 				4B38447521DFB8130064F731 /* User.swift in Sources */,
 				4B38449921DFD25E0064F731 /* MainViewModel.swift in Sources */,
 				4B38446821DFB7350064F731 /* Result.swift in Sources */,

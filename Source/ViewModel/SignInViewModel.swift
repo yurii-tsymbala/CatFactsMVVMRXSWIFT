@@ -26,12 +26,12 @@ class SignInViewModel: SignInViewModelType {
     static let emailPlaceholder = NSLocalizedString("Email", comment: "")
     static let passwordPlaceholder = NSLocalizedString("Password", comment: "")
   }
-  //
-  //  private let authService: AuthServiceType
-  //
-  //  init(authService: AuthServiceType) {
-  //    self.authService = authService
-  //  }
+  
+  private let userDefaultsService: UserDefaultsService
+
+  init(userDefaultsService: UserDefaultsService) {
+    self.userDefaultsService = userDefaultsService
+  }
 
   let emailPlaceholder = Strings.emailPlaceholder
   let passwordPlaceholder = Strings.passwordPlaceholder

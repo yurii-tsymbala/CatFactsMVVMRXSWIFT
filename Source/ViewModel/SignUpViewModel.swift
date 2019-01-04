@@ -34,11 +34,11 @@ class SignUpViewModel: SignUpViewModelType {
     static let passwordConfirmPlaceholder = NSLocalizedString("Confirm Password", comment: "")
   }
 
-  //  private let authService: AuthServiceType
-  //
-  //  init(authService: AuthServiceType) {
-  //    self.authService = authService
-  //  }
+    private let userDefaultsService: UserDefaultsService
+
+    init(userDefaultsService: UserDefaultsService) {
+      self.userDefaultsService = userDefaultsService
+    }
 
   let emailPlaceholder = Strings.emailPlaceholder
   let passwordPlaceholder = Strings.passwordPlaceholder

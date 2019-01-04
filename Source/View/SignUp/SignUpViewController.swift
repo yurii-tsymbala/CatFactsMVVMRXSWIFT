@@ -50,13 +50,14 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable {
     userPasswordTextField.placeholder = viewModel.passwordPlaceholder
     userEmailTextField.keyboardType = .emailAddress
     userPasswordTextField.isSecureTextEntry = true
+    userPasswordConfirmTextField.isSecureTextEntry = true
     signUpButton.addTarget(self, action: #selector(pressedSignUpButton), for: .touchUpInside)
     userPasswordConfirmTextField.delegate = self
     userEmailTextField.delegate = self
     userPasswordTextField.delegate = self
-    userPasswordConfirmTextField.tag = 0
-    userEmailTextField.tag = 1
-    userPasswordTextField.tag = 2
+    userEmailTextField.tag = 0
+    userPasswordTextField.tag = 1
+    userPasswordConfirmTextField.tag = 2
   }
 
   private func setupNavigationBar() {
