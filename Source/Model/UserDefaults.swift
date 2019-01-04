@@ -23,11 +23,11 @@ struct Defaults {
     }
   }
 
-  static var saveNameAndAddress = { (name: String, address: String) in
+  static var saveEmailAndPassword = { (name: String, address: String) in
     UserDefaults.standard.set([emailKey: name, passwordKey: address], forKey: userSessionKey)
   }
 
-  static var getNameAndAddress = { _ -> UserModel in
+  static var getEmailAndPassword = { _ -> UserModel in
     return UserModel((UserDefaults.standard.value(forKey: userSessionKey) as? [String: String]) ?? [:])
   }(())
 

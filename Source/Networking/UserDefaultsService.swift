@@ -12,8 +12,8 @@ enum UserDefaultsServiceError: String {
   case firstError = "Empty TextFields"
   case secondError = "Bad Email"
   case thirdError = "Bad password confirmation"
-  case fourthError = "Too short password"
-  case fifthError
+  case fourthError = "Short password. Use more then 5 symbols"
+  case fifthError = "Wrong password"
   case sixthError
   case seventhError
   case eighthError
@@ -68,14 +68,24 @@ final class UserDefaultsService {
   }
 
   func signIn(withEmail email: String,
-              withPassword password: String) {
+              withPassword password: String,
+              completion: @escaping AuthHandler) {
 
+    guard !email.isEmpty, !password.isEmpty else {completion(Result.failure(UserDefaultsServiceError.firstError));return}
+
+    guard email.isValidEmail() else {completion(Result.failure(UserDefaultsServiceError.secondError));return}
+
+    guard email == Defaults.getEmailAndPassword.email else {completion(Result.failure(UserDefaultsServiceError.secondError));return}
+
+    guard password == Defaults.getEmailAndPassword.password else {completion(Result.failure(UserDefaultsServiceError.fifthError));return}
+
+    completion(Result.success(true))
   }
 
   private func saveUserToUserDefaults(withEmail email: String,
                                       withPassword password: String,
                                       completion: @escaping AuthHandler) {
-    Defaults.saveNameAndAddress(email,password)
+    Defaults.saveEmailAndPassword(email,password)
     completion(Result.success(true))
   }
 }

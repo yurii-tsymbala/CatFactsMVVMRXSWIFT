@@ -26,7 +26,7 @@ class SignInViewModel: SignInViewModelType {
     static let emailPlaceholder = NSLocalizedString("Email", comment: "")
     static let passwordPlaceholder = NSLocalizedString("Password", comment: "")
   }
-  
+
   private let userDefaultsService: UserDefaultsService
 
   init(userDefaultsService: UserDefaultsService) {
@@ -41,18 +41,16 @@ class SignInViewModel: SignInViewModelType {
   var onFinish = PublishSubject<Void>()
 
   func signIn() {
-    //    authService.signIn(
-    //      withEmail: emailInput.value,
-    //      withPassword: passwordInput.value,
-    //      completion: { [weak self] authResult in
-    //        guard let strongSelf = self else { return }
-    //        switch authResult {
-    //        case .success:
-    //          strongSelf.onFinish.onNext(())
-    //        case .failure:
-    //          Logger.error(authResult.error.debugDescription)
-    //        }
-    //    })
+    userDefaultsService.signIn(withEmail: emailInput.value,
+                               withPassword: passwordInput.value) { [weak self] userDefaultsServiceResult in
+                                guard let strongSelf = self else {return}
+                                switch userDefaultsServiceResult {
+                                case .success(_):
+                                  strongSelf.onFinish.onNext(())
+                                case .failure(let error):
+                                  print("Error = \(error.rawValue)") // закинути ці дані в алерт і презентнути
+                                }
+    }
   }
 }
 
