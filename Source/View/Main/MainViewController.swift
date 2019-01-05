@@ -71,8 +71,6 @@ class MainViewController: UITableViewController {
     tableView.register(catCellNib, forCellReuseIdentifier: catTableViewCellId)
     tableView.estimatedRowHeight = tableView.rowHeight
     tableView.rowHeight = UITableView.automaticDimension
-
-    tableView.reloadData()
   }
 
   private func setupNavigationBar() {

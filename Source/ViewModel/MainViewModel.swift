@@ -63,6 +63,7 @@ class MainViewModel : MainViewModelType {
       switch fetchResult {
       case .success(let catCellViewModels):
         strongSelf.cellViewModels = catCellViewModels
+        strongSelf.reloadData.onNext(())
         print("success")
       case .failure(let errror):
         print(errror)
