@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0DE6E4A97753B2EF4246E863 /* Pods_CatFacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82ADFFD4B4E7F3E200D671A5 /* Pods_CatFacts.framework */; };
+		4B1BC42521E0F3B500D3BC12 /* CatDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1BC42421E0F3B500D3BC12 /* CatDetailViewModel.swift */; };
+		4B1BC42821E0F50C00D3BC12 /* CatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1BC42621E0F50C00D3BC12 /* CatTableViewCell.swift */; };
+		4B1BC42921E0F50C00D3BC12 /* CatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1BC42721E0F50C00D3BC12 /* CatTableViewCell.xib */; };
 		4B38446521DFB6A70064F731 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38446421DFB6A70064F731 /* DownloadService.swift */; };
 		4B38446821DFB7350064F731 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38446721DFB7350064F731 /* Result.swift */; };
 		4B38446D21DFB7C30064F731 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38446C21DFB7C30064F731 /* WelcomeViewModel.swift */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		2DE9F459D069525AE322C914 /* Pods-CatFacts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatFacts.release.xcconfig"; path = "Pods/Target Support Files/Pods-CatFacts/Pods-CatFacts.release.xcconfig"; sourceTree = "<group>"; };
+		4B1BC42421E0F3B500D3BC12 /* CatDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailViewModel.swift; sourceTree = "<group>"; };
+		4B1BC42621E0F50C00D3BC12 /* CatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableViewCell.swift; sourceTree = "<group>"; };
+		4B1BC42721E0F50C00D3BC12 /* CatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatTableViewCell.xib; sourceTree = "<group>"; };
 		4B38446421DFB6A70064F731 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 		4B38446721DFB7350064F731 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		4B38446C21DFB7C30064F731 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 				4B38449821DFD25E0064F731 /* MainViewModel.swift */,
 				4B3844B121DFE9AE0064F731 /* AlertViewModel.swift */,
 				4B3844BC21E038F80064F731 /* CatCellViewModel.swift */,
+				4B1BC42421E0F3B500D3BC12 /* CatDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -179,6 +186,8 @@
 			children = (
 				4B3844B821E02EC40064F731 /* MainViewController.swift */,
 				4B3844B921E02EC40064F731 /* MainViewController.xib */,
+				4B1BC42621E0F50C00D3BC12 /* CatTableViewCell.swift */,
+				4B1BC42721E0F50C00D3BC12 /* CatTableViewCell.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -334,6 +343,7 @@
 				4B3844AB21DFD85C0064F731 /* SignUpViewController.xib in Resources */,
 				4B9248E421DFB29E00873821 /* Assets.xcassets in Resources */,
 				4B3844A821DFD7FF0064F731 /* SignInViewController.xib in Resources */,
+				4B1BC42921E0F50C00D3BC12 /* CatTableViewCell.xib in Resources */,
 				4B3844BB21E02EC40064F731 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,11 +414,13 @@
 				4B3844B521DFEC2B0064F731 /* EmailValidationStringExtension.swift in Sources */,
 				4B3844BA21E02EC40064F731 /* MainViewController.swift in Sources */,
 				4B38449E21DFD6870064F731 /* KeyboardContentAdjustable.swift in Sources */,
+				4B1BC42821E0F50C00D3BC12 /* CatTableViewCell.swift in Sources */,
 				4B38447121DFB7DB0064F731 /* SignInViewModel.swift in Sources */,
 				4B3844B721DFFB2B0064F731 /* UserDefaults.swift in Sources */,
 				4B38446D21DFB7C30064F731 /* WelcomeViewModel.swift in Sources */,
 				4B3844AC21DFD85C0064F731 /* SignUpViewController.swift in Sources */,
 				4B9248DD21DFB29D00873821 /* AppDelegate.swift in Sources */,
+				4B1BC42521E0F3B500D3BC12 /* CatDetailViewModel.swift in Sources */,
 				4B3844A021DFD6930064F731 /* CustomButton.swift in Sources */,
 				4B3844A721DFD7FF0064F731 /* SignInViewController.swift in Sources */,
 				4B38447321DFB7F80064F731 /* UserDefaultsService.swift in Sources */,
