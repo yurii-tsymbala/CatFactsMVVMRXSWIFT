@@ -55,8 +55,6 @@ class DownloadService: DownloadServiceType {
                 }
               }
               strongSelf.cellViewModels.append(cellViewModel) // finish
-            } else {
-              strongSelf.cellViewModels.append(cellViewModel)
             }
           }
         } else {
