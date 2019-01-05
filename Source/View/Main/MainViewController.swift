@@ -14,6 +14,7 @@ class MainViewController: UITableViewController {
   var doneCallback: (() -> Void)?
   private var viewModel: MainViewModelType!
   private let disposeBag = DisposeBag()
+  private let catTableViewCellId = "CatTableViewCell"
 
   convenience init(viewModel: MainViewModelType) {
     self.init()
@@ -34,6 +35,23 @@ class MainViewController: UITableViewController {
         strongSelf.doneCallback?()
       })
       .disposed(by: disposeBag)
+    viewModel.reloadData
+      .subscribe(onNext: { [weak self] in
+        guard let strongSelf = self else { return }
+        strongSelf.tableView.reloadData()
+      })
+      .disposed(by: disposeBag)
+    viewModel.showCatDetail
+      .subscribe(onNext: { [weak self] catDetailViewModel in
+        guard let strongSelf = self else { return }
+        strongSelf.showCatDetail(withViewModel: catDetailViewModel)
+      })
+      .disposed(by: disposeBag)
+  }
+
+  private func showCatDetail(withViewModel viewModel: CatDetailViewModel) {
+    let catDetailViewController = CatDetailViewController(viewModel: viewModel)
+    navigationController?.pushViewController(catDetailViewController, animated: true)
   }
 
   private func setupView() {
@@ -43,9 +61,19 @@ class MainViewController: UITableViewController {
   }
 
   private func setupTableView() {
-    tableView.allowsSelection = false
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.allowsSelection = true
+    tableView.allowsMultipleSelection = false
     tableView.backgroundView?.backgroundColor = ViewConfig.Colors.background
     tableView.backgroundColor = ViewConfig.Colors.background
+    let catCellNib = UINib(nibName: catTableViewCellId, bundle: nil)
+    tableView.register(catCellNib, forCellReuseIdentifier: catTableViewCellId)
+    //tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
+    tableView.estimatedRowHeight = tableView.rowHeight
+    tableView.rowHeight = UITableView.automaticDimension
+
+    tableView.reloadData()
   }
 
   private func setupNavigationBar() {
@@ -63,5 +91,21 @@ class MainViewController: UITableViewController {
 
   @objc func logOut() {
     viewModel.logOut()
+  }
+}
+
+extension MainViewController {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return viewModel.numberOfCells
+  }
+
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: catTableViewCellId, for: indexPath) as! CatTableViewCell
+    cell.viewModel = viewModel.getCellViewModel(at: indexPath.row)
+    return cell
+  }
+
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    viewModel.selectCat(atIndex: indexPath.row)
   }
 }

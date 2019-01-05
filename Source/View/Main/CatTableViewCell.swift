@@ -30,6 +30,7 @@ class CatTableViewCell: UITableViewCell {
   }
 
   private func setupView() {
+    imageView?.contentMode = .scaleAspectFit
     guard let viewModel = viewModel else { return }
     catImageView.image = viewModel.image
     catNameLabel.text = viewModel.name

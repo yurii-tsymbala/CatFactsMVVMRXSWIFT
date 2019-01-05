@@ -13,9 +13,12 @@ import RxCocoa
 protocol MainViewModelType {
   var navigatiomItemTitle: String { get }
   var navigationItemRightBarButtonItemTitle: String { get}
+  var numberOfCells: Int { get }
   var onFinish: PublishSubject<Void> { get }
   var reloadData: PublishSubject<Void> { get }
   var showCatDetail: PublishSubject<CatDetailViewModel> { get }
+  func getCellViewModel(at index: Int) -> CatCellViewModel
+  func selectCat(atIndex index: Int)
   func logOut()
 }
 
