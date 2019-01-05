@@ -69,7 +69,6 @@ class MainViewController: UITableViewController {
     tableView.backgroundColor = ViewConfig.Colors.background
     let catCellNib = UINib(nibName: catTableViewCellId, bundle: nil)
     tableView.register(catCellNib, forCellReuseIdentifier: catTableViewCellId)
-    //tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
     tableView.estimatedRowHeight = tableView.rowHeight
     tableView.rowHeight = UITableView.automaticDimension
 

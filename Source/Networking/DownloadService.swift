@@ -64,7 +64,7 @@ class DownloadService: DownloadServiceType {
     let second = CatCellViewModel(name: "Tom jerryy,Tom jerryy", text: "Cat from Cartoons,Cat from Cartoons")
     let third = CatCellViewModel(name: "Tom jerryy,Tom jerryy,Tom jerryy", text: "Cat from Cartoons,Cat from Cartoons,Cat from Cartoons")
     let fourth = CatCellViewModel(name: "Tom jerryy,Tom jerryy,Tom jerryy", text: "Great Cat")
-    let fifth = CatCellViewModel(name: "Tom", text: "Cat from Cartoons,Cat from Cartoons,Cat from Cartoons,Cat from Cartoons")
+    let fifth = CatCellViewModel(name: "Tom", text: "Cats see and hear extremely well. They can see in the dark and hear many sounds that humans are not able to hear. To feel their way round, cats use their whiskers.")
     let sixth = CatCellViewModel(name: "Tom jerryy lalallala", text: "Good Cat")
     array.append(first)
     array.append(second)
