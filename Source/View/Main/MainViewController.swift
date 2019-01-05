@@ -15,6 +15,7 @@ class MainViewController: UITableViewController {
   private var viewModel: MainViewModelType!
   private let disposeBag = DisposeBag()
   private let catTableViewCellId = "CatTableViewCell"
+  private let router = Router()
 
   convenience init(viewModel: MainViewModelType) {
     self.init()
@@ -90,6 +91,9 @@ class MainViewController: UITableViewController {
     viewModel.logOut()
   }
 
+  private func showAlert(withViewModel viewModel: AlertViewModel ) {
+    router.showAlert(viewModel, inViewController: self)
+  }
   
 }
 

@@ -20,6 +20,7 @@ protocol SignUpViewModelType {
   var emailInput: BehaviorRelay<String> { get }
   var passwordInput: BehaviorRelay<String> { get }
   var passwordConfirmInput: BehaviorRelay<String> { get }
+  var showAlert: PublishSubject<AlertViewModel> { get }
   var onFinish: PublishSubject<Void> { get }
   func signUp()
 }
@@ -51,6 +52,7 @@ class SignUpViewModel: SignUpViewModelType {
   var emailInput = BehaviorRelay<String>(value: "")
   var passwordInput = BehaviorRelay<String>(value: "")
   var passwordConfirmInput = BehaviorRelay<String>(value: "")
+  var showAlert = PublishSubject<AlertViewModel>()
   var onFinish = PublishSubject<Void>()
 
   func signUp() {
@@ -62,7 +64,7 @@ class SignUpViewModel: SignUpViewModelType {
                                 case .success(_):
                                   strongSelf.onFinish.onNext(())
                                 case .failure(let error):
-                                  print("Error = \(error.rawValue)") // закинути ці дані в алерт і презентнути
+                                  strongSelf.showAlert.onNext(AlertViewModel(message: error.rawValue))
                                 }
     }
   }

@@ -16,6 +16,7 @@ class SignInViewController: UIViewController, KeyboardContentAdjustable {
   @IBOutlet private weak var signInButton: CustomButton!
   var doneCallback: (() -> Void)?
   private var viewModel: SignInViewModelType!
+  private let router = Router()
   private let disposeBag = DisposeBag()
 
   convenience init(viewModel: SignInViewModelType) {
@@ -76,6 +77,12 @@ class SignInViewController: UIViewController, KeyboardContentAdjustable {
         strongSelf.doneCallback?()
       })
       .disposed(by: disposeBag)
+    viewModel.showAlert
+      .subscribe(onNext: { [weak self] alertViewModel in
+        guard let strongSelf = self else { return }
+        strongSelf.showAlert(withViewModel: alertViewModel)
+      })
+      .disposed(by: disposeBag)
   }
 
   private func hideKeyboardAfterTap() {
@@ -91,6 +98,10 @@ class SignInViewController: UIViewController, KeyboardContentAdjustable {
   @objc
   private func pressedSignInButton(_ sender: UIButton) {
     viewModel.signIn()
+  }
+
+  private func showAlert(withViewModel viewModel: AlertViewModel ) {
+    router.showAlert(viewModel, inViewController: self)
   }
 }
 

@@ -17,6 +17,7 @@ protocol SignInViewModelType {
   var emailInput: BehaviorRelay<String> { get }
   var passwordInput: BehaviorRelay<String> { get }
   var onFinish: PublishSubject<Void> { get }
+  var showAlert: PublishSubject<AlertViewModel> { get }
   func signIn()
 }
 
@@ -39,6 +40,7 @@ class SignInViewModel: SignInViewModelType {
   var emailInput = BehaviorRelay<String>(value: "")
   var passwordInput = BehaviorRelay<String>(value: "")
   var onFinish = PublishSubject<Void>()
+  var showAlert = PublishSubject<AlertViewModel>()
 
   func signIn() {
     userDefaultsService.signIn(withEmail: emailInput.value,
@@ -48,7 +50,7 @@ class SignInViewModel: SignInViewModelType {
                                 case .success(_):
                                   strongSelf.onFinish.onNext(())
                                 case .failure(let error):
-                                  print("Error = \(error.rawValue)") // закинути ці дані в алерт і презентнути
+                                  strongSelf.showAlert.onNext(AlertViewModel(message: error.rawValue))
                                 }
     }
   }

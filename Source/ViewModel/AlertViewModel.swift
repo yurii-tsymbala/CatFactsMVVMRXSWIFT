@@ -9,5 +9,6 @@
 import Foundation
 
 struct AlertViewModel {
-  
+  let title = "Error"
+  let message: String
 }

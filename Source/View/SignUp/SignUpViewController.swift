@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable {
 
   var doneCallback: (() -> Void)?
   private var alert: UIAlertController?
+  private let router = Router()
   private var viewModel: SignUpViewModel!
   private let disposeBag = DisposeBag()
 
@@ -29,7 +30,6 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    setupAlertController()
     observeViewModel()
     subscribeForKeyboard(visibleView: signUpButton, disposeBag: disposeBag)
     hideKeyboardAfterTap()
@@ -86,6 +86,12 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable {
         strongSelf.doneCallback?()
       })
       .disposed(by: disposeBag)
+    viewModel.showAlert
+      .subscribe(onNext: { [weak self] alertViewModel in
+        guard let strongSelf = self else { return }
+        strongSelf.showAlert(withViewModel: alertViewModel)
+      })
+      .disposed(by: disposeBag)
   }
 
   private func hideKeyboardAfterTap() {
@@ -103,19 +109,8 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable {
     viewModel.signUp()
   }
 
-  @objc
-  private func editUserFotoAction() {
-    guard let alert = self.alert else { return }
-    present(alert, animated: true, completion: nil)
-  }
-
-  private func setupAlertController() {
-    alert = UIAlertController(title: viewModel.alertTitle,
-                              message: viewModel.alertMessage,
-                              preferredStyle: .actionSheet)
-    let cancelAction = UIAlertAction(title: "viewModel.Cancel", style: .cancel, handler: nil)
-    guard let alert = self.alert else { return }
-    alert.addAction(cancelAction)
+  private func showAlert(withViewModel viewModel: AlertViewModel ) {
+    router.showAlert(viewModel, inViewController: self)
   }
 }
 

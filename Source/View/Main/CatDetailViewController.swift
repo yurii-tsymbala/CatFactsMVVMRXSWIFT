@@ -41,5 +41,4 @@ class CatDetailViewController: UIViewController {
     catDetailText.textColor = ViewConfig.Colors.textWhite
     catDetailName.textColor = ViewConfig.Colors.textWhite
   }
-  
 }
