@@ -16,6 +16,7 @@ class MainViewController: UITableViewController {
   private let disposeBag = DisposeBag()
   private let catTableViewCellId = "CatTableViewCell"
   private var router: Router!
+  private var myActivityIndicator: UIActivityIndicatorView!
 
   convenience init(withViewModel viewModel: MainViewModelType,withRouter router: Router) {
     self.init()
@@ -27,9 +28,20 @@ class MainViewController: UITableViewController {
     super.viewDidLoad()
     setupView()
     observeViewModel()
+    viewModel.fetchData()
   }
 
   private func observeViewModel() {
+    viewModel.startAnimating
+      .subscribe(onNext: { [weak self] in
+        guard let strongSelf = self else {return}
+        strongSelf.startAnimating()
+        }, onCompleted: { [weak self] in
+          guard let strongSelf = self else {return}
+          DispatchQueue.main.async {
+            strongSelf.stopAnimating()
+          }
+      }).disposed(by: disposeBag)
     viewModel.onFinish
       .subscribe(onNext: { [weak self] in
         guard let strongSelf = self else { return }
@@ -53,7 +65,30 @@ class MainViewController: UITableViewController {
   private func setupView() {
     view.backgroundColor = ViewConfig.Colors.background
     setupNavigationBar()
+    setupActivityIndicator()
     setupTableView()
+  }
+
+  private func setupActivityIndicator() {
+     myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
+    myActivityIndicator.center = view.center
+    view.addSubview(myActivityIndicator)
+  }
+
+  private func startAnimating() {
+    self.myActivityIndicator.isHidden = false
+    myActivityIndicator.startAnimating()
+    userIteractionEnabled(isEnabled: false)
+  }
+
+  private func stopAnimating() {
+    myActivityIndicator.stopAnimating()
+    myActivityIndicator.isHidden = true
+    userIteractionEnabled(isEnabled: true)
+  }
+
+  private func userIteractionEnabled(isEnabled: Bool) {
+    tableView.isUserInteractionEnabled = isEnabled
   }
 
   private func setupTableView() {

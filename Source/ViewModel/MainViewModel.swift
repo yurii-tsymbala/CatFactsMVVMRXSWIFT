@@ -18,8 +18,10 @@ protocol MainViewModelType {
   var reloadData: PublishSubject<Void> { get }
   var showCatDetail: PublishSubject<CatDetailViewModel> { get }
   var showAlert: PublishSubject<AlertViewModel> { get }
+  var startAnimating: PublishSubject<Void> { get }
   func getCellViewModel(atIndex index: Int) -> CatCellViewModel
   func selectCat(atIndex index: Int)
+  func fetchData()
   func logOut()
 }
 
@@ -28,8 +30,8 @@ class MainViewModel : MainViewModelType {
     static let navigatiomItemTitle = NSLocalizedString("Cat Facts", comment: "")
     static let navigationItemRightBarButtonItemTitle = NSLocalizedString("Log Out", comment: "")
   }
-   private let downloadService: DownloadServiceType
-   private var cellViewModels: [CatCellViewModel] = []
+  private let downloadService: DownloadServiceType
+  private var cellViewModels: [CatCellViewModel] = []
 
   var navigationItemRightBarButtonItemTitle = Strings.navigationItemRightBarButtonItemTitle
   var navigatiomItemTitle = Strings.navigatiomItemTitle
@@ -37,14 +39,13 @@ class MainViewModel : MainViewModelType {
   var reloadData = PublishSubject<Void>()
   var showCatDetail = PublishSubject<CatDetailViewModel>()
   var showAlert = PublishSubject<AlertViewModel>()
+  var startAnimating = PublishSubject<Void>()
   var numberOfCells: Int {
     return cellViewModels.count
   }
 
   init(downloadService: DownloadServiceType) {
     self.downloadService = downloadService
-    //MARK:
-    fetchData() // можливо треба буде перемістити в контролер
   }
 
   func selectCat(atIndex index: Int) {
@@ -58,16 +59,21 @@ class MainViewModel : MainViewModelType {
     return cellViewModels[index]
   }
 
-  private func fetchData() {
+  func fetchData() {
     downloadService.fetchDataFromJSON { [weak self] fetchResult in
       guard let strongSelf = self else {return}
-      switch fetchResult {
-      case .success(let catCellViewModels):
-        //MARK:
-        strongSelf.cellViewModels = catCellViewModels // порефакторити
-        strongSelf.reloadData.onNext(())
-      case .failure(let error):
-        strongSelf.showAlert.onNext(AlertViewModel(message: error.rawValue))
+      strongSelf.startAnimating.onNext(())
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        switch fetchResult {
+        case .success(let catCellViewModels):
+          strongSelf.startAnimating.onCompleted()
+          //MARK:
+          strongSelf.cellViewModels = catCellViewModels // порефакторити
+          strongSelf.reloadData.onNext(())
+        case .failure(let error):
+          strongSelf.startAnimating.onCompleted()
+          strongSelf.showAlert.onNext(AlertViewModel(message: error.rawValue))
+        }
       }
     }
   }
@@ -75,5 +81,4 @@ class MainViewModel : MainViewModelType {
   func logOut() {
     onFinish.onNext(())
   }
-  
 }
