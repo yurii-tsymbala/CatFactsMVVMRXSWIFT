@@ -89,6 +89,8 @@ class MainViewController: UITableViewController {
   @objc func logOut() {
     viewModel.logOut()
   }
+
+  
 }
 
 extension MainViewController {

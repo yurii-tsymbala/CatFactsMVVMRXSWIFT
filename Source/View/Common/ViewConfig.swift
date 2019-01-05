@@ -33,7 +33,8 @@ struct ViewConfig {
   }
 
   struct Design {
-    static var cornerRadius: CGFloat { return 6.0 }
+    static var cornerRadius: CGFloat { return 2.0 }
+    static var borderWidth: CGFloat { return 1.0 }
     static var enabledButtonAlpha: CGFloat { return 1 }
     static var disabledButtonAlpha: CGFloat { return 0.5 }
   }

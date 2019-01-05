@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="CatFacts" customModuleProvider="target">
             <connections>
+                <outlet property="logoImageView" destination="SIu-7W-TIL" id="8ta-vZ-K69"/>
                 <outlet property="signInButton" destination="ZNK-k4-GMN" id="YJm-Hg-NJc"/>
                 <outlet property="signUpButton" destination="u4B-70-veU" id="BSC-gN-our"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -51,15 +52,24 @@
                         <constraint firstAttribute="trailing" secondItem="ZNK-k4-GMN" secondAttribute="trailing" id="pWt-YI-PNn"/>
                     </constraints>
                 </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SIu-7W-TIL">
+                    <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="Dlu-sk-iN5"/>
+                        <constraint firstAttribute="height" constant="300" id="qNR-An-wsU"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jVC-EL-QEe" secondAttribute="bottom" constant="10" id="DtY-7C-Lzr"/>
+                <constraint firstItem="SIu-7W-TIL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EB1-gO-vh6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jVC-EL-QEe" secondAttribute="trailing" constant="15" id="Npx-M2-yXa"/>
                 <constraint firstItem="jVC-EL-QEe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="cUL-XE-hbz"/>
+                <constraint firstItem="SIu-7W-TIL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xwo-Kl-5bx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="24.5" y="51.5"/>
+            <point key="canvasLocation" x="23.199999999999999" y="50.824587706146929"/>
         </view>
     </objects>
 </document>

@@ -14,7 +14,7 @@ class WelcomeViewController: UIViewController {
   var doneCallback: (() -> Void)?
   @IBOutlet weak private var signUpButton: CustomButton!
   @IBOutlet weak private var signInButton: CustomButton!
-
+  @IBOutlet weak private var logoImageView: UIImageView!
   private var viewModel: WelcomeViewModelType!
   private let disposeBag = DisposeBag()
 
@@ -35,6 +35,8 @@ class WelcomeViewController: UIViewController {
   }
 
   private func setupView() {
+    logoImageView.image = UIImage(named: "catlogo")
+    logoImageView.contentMode = .scaleAspectFill
     view.backgroundColor = ViewConfig.Colors.background
     signInButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
     signUpButton.addTarget(self, action: #selector(signUp), for: .touchUpInside)

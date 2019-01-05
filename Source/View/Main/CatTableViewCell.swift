@@ -30,6 +30,7 @@ class CatTableViewCell: UITableViewCell {
   }
 
   private func setupView() {
+    cellDesign(cell: self)
     selectionStyle = .none
     catImageView?.contentMode = .scaleToFill
     catImageView?.layer.cornerRadius = 15
@@ -44,5 +45,16 @@ class CatTableViewCell: UITableViewCell {
     catImageView.image = viewModel.image
     catNameLabel.text = viewModel.name
     catTextLabel.text = viewModel.text
+  }
+
+  private func cellDesign(cell: UITableViewCell ) {
+    cell.layer.cornerRadius = ViewConfig.Design.cornerRadius
+    cell.layer.borderWidth = ViewConfig.Design.borderWidth
+    cell.alpha = 0
+    cell.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
+    UIView.animate(withDuration: 0.8, animations: { () -> Void in
+      cell.alpha = 1
+      cell.layer.transform = CATransform3DScale(CATransform3DIdentity, 1, 1, 1)
+    })
   }
 }
