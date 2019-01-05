@@ -32,7 +32,6 @@ class MainViewController: UITableViewController {
       .subscribe(onNext: { [weak self] in
         guard let strongSelf = self else { return }
         strongSelf.doneCallback?()
-        print("esketit")
       })
       .disposed(by: disposeBag)
   }
@@ -50,11 +49,11 @@ class MainViewController: UITableViewController {
   }
 
   private func setupNavigationBar() {
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out",
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: viewModel.navigatiomItemTitle,
                                                         style: .plain,
                                                         target: self,
                                                         action: #selector(logOut))
-    navigationItem.title = "Cat Facts"
+    navigationItem.title = viewModel.navigationItemRightBarButtonItemTitle
     navigationItem.rightBarButtonItem?.tintColor = ViewConfig.Colors.white
     navigationController?.navigationBar.barTintColor = ViewConfig.Colors.background
     navigationController?.navigationBar.backgroundColor = ViewConfig.Colors.background
