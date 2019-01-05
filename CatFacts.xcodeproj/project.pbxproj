@@ -246,8 +246,8 @@
 		4B9248DB21DFB29D00873821 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				4B3844B321DFEC110064F731 /* Extensions */,
 				4BE7205521DFB361001D952C /* Application */,
+				4B3844B321DFEC110064F731 /* Extensions */,
 				4B38446621DFB7150064F731 /* Utils */,
 				4B38446321DFB6650064F731 /* Networking */,
 				4B38446A21DFB7580064F731 /* Model */,

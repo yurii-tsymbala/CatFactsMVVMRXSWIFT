@@ -26,10 +26,6 @@ struct ViewConfig {
     static var grayLight = UIColor(red: 0.15, green: 0.17, blue: 0.18, alpha: 1.0)
     static var grayDark = UIColor(red: 0.08, green: 0.09, blue: 0.11, alpha: 1.0)
     static var grayDarkAlpha = UIColor(red: 0.08, green: 0.09, blue: 0.11, alpha: 0.7)
-    static var cancelButtonColor = #colorLiteral(red: 1, green: 0.2216856198, blue: 0.2313298065, alpha: 1)
-    static let priorityHight = #colorLiteral(red: 1, green: 0.2216856198, blue: 0.2313298065, alpha: 1)
-    static let priorityNormal = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-    static let priorityLow = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
   }
 
   struct Design {
@@ -37,10 +33,6 @@ struct ViewConfig {
     static var borderWidth: CGFloat { return 1.0 }
     static var enabledButtonAlpha: CGFloat { return 1 }
     static var disabledButtonAlpha: CGFloat { return 0.5 }
-  }
-
-  struct Fonts {
-    static let callout = UIFont.systemFont(ofSize: 14.0)
   }
 }
 
