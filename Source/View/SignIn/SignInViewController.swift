@@ -16,12 +16,13 @@ class SignInViewController: UIViewController, KeyboardContentAdjustable {
   @IBOutlet private weak var signInButton: CustomButton!
   var doneCallback: (() -> Void)?
   private var viewModel: SignInViewModelType!
-  private let router = Router()
+  private var router: Router!
   private let disposeBag = DisposeBag()
 
-  convenience init(viewModel: SignInViewModelType) {
+  convenience init(withViewModel viewModel: SignInViewModelType, withRouter router: Router) {
     self.init()
     self.viewModel = viewModel
+    self.router = router
   }
 
   override func viewDidLoad() {

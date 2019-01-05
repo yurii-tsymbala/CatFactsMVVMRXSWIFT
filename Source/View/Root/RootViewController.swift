@@ -40,8 +40,8 @@ final class RootViewController: UIViewController {
       }
     } else if userDefaultsService.isUserLogin {
       let main = createRootNavigationViewController(with:
-        MainViewController(viewModel:
-          MainViewModel(downloadService: DownloadService())))
+        MainViewController(withViewModel: MainViewModel(downloadService: DownloadService()),
+                           withRouter: Router()))
       currentViewController = main
       let mainViewController = main.children.first as? MainViewController
       mainViewController?.doneCallback = { [unowned self] in

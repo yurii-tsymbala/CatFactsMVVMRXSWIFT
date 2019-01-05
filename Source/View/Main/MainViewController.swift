@@ -15,10 +15,11 @@ class MainViewController: UITableViewController {
   private var viewModel: MainViewModelType!
   private let disposeBag = DisposeBag()
   private let catTableViewCellId = "CatTableViewCell"
-  private let router = Router()
+  private var router: Router!
 
-  convenience init(viewModel: MainViewModelType) {
+  convenience init(withViewModel viewModel: MainViewModelType,withRouter router: Router) {
     self.init()
+    self.router = router
     self.viewModel = viewModel
   }
 
@@ -47,11 +48,6 @@ class MainViewController: UITableViewController {
         strongSelf.showCatDetail(withViewModel: catDetailViewModel)
       })
       .disposed(by: disposeBag)
-  }
-
-  private func showCatDetail(withViewModel viewModel: CatDetailViewModel) {
-    let catDetailViewController = CatDetailViewController(viewModel: viewModel)
-    navigationController?.pushViewController(catDetailViewController, animated: true)
   }
 
   private func setupView() {
@@ -91,10 +87,14 @@ class MainViewController: UITableViewController {
     viewModel.logOut()
   }
 
+  private func showCatDetail(withViewModel viewModel: CatDetailViewModel) {
+    let catDetailViewController = CatDetailViewController(viewModel: viewModel)
+    navigationController?.pushViewController(catDetailViewController, animated: true)
+  }
+
   private func showAlert(withViewModel viewModel: AlertViewModel ) {
     router.showAlert(viewModel, inViewController: self)
   }
-  
 }
 
 extension MainViewController {
@@ -104,7 +104,7 @@ extension MainViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: catTableViewCellId, for: indexPath) as! CatTableViewCell
-    cell.viewModel = viewModel.getCellViewModel(at: indexPath.row)
+    cell.viewModel = viewModel.getCellViewModel(atIndex: indexPath.row)
     return cell
   }
 

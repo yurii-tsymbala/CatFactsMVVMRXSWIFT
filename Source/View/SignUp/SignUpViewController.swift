@@ -18,13 +18,19 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable {
 
   var doneCallback: (() -> Void)?
   private var alert: UIAlertController?
-  private let router = Router()
+  private var router: Router!
   private var viewModel: SignUpViewModel!
   private let disposeBag = DisposeBag()
 
-  convenience init(viewModel: SignUpViewModel) {
+  convenience init(withViewModel viewModel: SignUpViewModel, withRouter router: Router) {
     self.init()
+    self.router = router
     self.viewModel = viewModel
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(true)
+    setupNavigationBar()
   }
 
   override func viewDidLoad() {
@@ -33,37 +39,6 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable {
     observeViewModel()
     subscribeForKeyboard(visibleView: signUpButton, disposeBag: disposeBag)
     hideKeyboardAfterTap()
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(true)
-    setupNavigationBar()
-  }
-
-  private func setupView() {
-    view.backgroundColor = ViewConfig.Colors.background
-    userPasswordConfirmTextField.autocorrectionType = .no
-    userEmailTextField.autocorrectionType = .no
-    userPasswordTextField.autocorrectionType = .no
-    userPasswordConfirmTextField.placeholder = viewModel.passwordConfirmPlaceholder
-    userEmailTextField.placeholder = viewModel.emailPlaceholder
-    userPasswordTextField.placeholder = viewModel.passwordPlaceholder
-    userEmailTextField.keyboardType = .emailAddress
-    userPasswordTextField.isSecureTextEntry = true
-    userPasswordConfirmTextField.isSecureTextEntry = true
-    signUpButton.addTarget(self, action: #selector(pressedSignUpButton), for: .touchUpInside)
-    userPasswordConfirmTextField.delegate = self
-    userEmailTextField.delegate = self
-    userPasswordTextField.delegate = self
-    userEmailTextField.tag = 0
-    userPasswordTextField.tag = 1
-    userPasswordConfirmTextField.tag = 2
-  }
-
-  private func setupNavigationBar() {
-    navigationController?.navigationBar.isTranslucent = false
-    navigationController?.isNavigationBarHidden = false
-    navigationController?.navigationBar.barTintColor = ViewConfig.Colors.background
   }
 
   private func observeViewModel() {
@@ -92,6 +67,32 @@ class SignUpViewController: UIViewController, KeyboardContentAdjustable {
         strongSelf.showAlert(withViewModel: alertViewModel)
       })
       .disposed(by: disposeBag)
+  }
+
+  private func setupView() {
+    view.backgroundColor = ViewConfig.Colors.background
+    userPasswordConfirmTextField.autocorrectionType = .no
+    userEmailTextField.autocorrectionType = .no
+    userPasswordTextField.autocorrectionType = .no
+    userPasswordConfirmTextField.placeholder = viewModel.passwordConfirmPlaceholder
+    userEmailTextField.placeholder = viewModel.emailPlaceholder
+    userPasswordTextField.placeholder = viewModel.passwordPlaceholder
+    userEmailTextField.keyboardType = .emailAddress
+    userPasswordTextField.isSecureTextEntry = true
+    userPasswordConfirmTextField.isSecureTextEntry = true
+    signUpButton.addTarget(self, action: #selector(pressedSignUpButton), for: .touchUpInside)
+    userPasswordConfirmTextField.delegate = self
+    userEmailTextField.delegate = self
+    userPasswordTextField.delegate = self
+    userEmailTextField.tag = 0
+    userPasswordTextField.tag = 1
+    userPasswordConfirmTextField.tag = 2
+  }
+
+  private func setupNavigationBar() {
+    navigationController?.navigationBar.isTranslucent = false
+    navigationController?.isNavigationBarHidden = false
+    navigationController?.navigationBar.barTintColor = ViewConfig.Colors.background
   }
 
   private func hideKeyboardAfterTap() {

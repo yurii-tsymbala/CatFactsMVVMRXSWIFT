@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum DownloadServiceError: Error {
-  case firstError
+enum DownloadServiceError: String {
+  case firstError = ""
   case secondError
   case thirdError
   case fourthError
@@ -23,15 +23,15 @@ enum DownloadServiceError: Error {
 }
 
 protocol DownloadServiceType {
-  func fetchDataFromJSON(completion: @escaping (Result<[CatCellViewModel], Error>) -> Void)
+  func fetchDataFromJSON(completion: @escaping (Result<[CatCellViewModel], DownloadServiceError>) -> Void)
 }
 
 class DownloadService: DownloadServiceType {
 
   private var cats: [Cat]!
 
-  func fetchDataFromJSON(completion: @escaping (Result<[CatCellViewModel], Error>) -> Void) {
- completion(Result.success(generateCellViewModels()))
+  func fetchDataFromJSON(completion: @escaping (Result<[CatCellViewModel], DownloadServiceError>) -> Void) {
+    completion(Result.success(generateCellViewModels()))
     //    let jsonURL = URL(string: "https://cat-fact.herokuapp.com/facts")!
     //    URLSession.shared.dataTask(with: jsonURL) { [weak self]  (data,_,error) in
     //      guard let strongSelf = self else { return }

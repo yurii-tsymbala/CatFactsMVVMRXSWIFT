@@ -34,6 +34,24 @@ class WelcomeViewController: UIViewController {
     setupView()
   }
 
+  private func observeViewModel() {
+    viewModel.showSignIn
+      .subscribe(onNext: { [weak self] (viewModel) in
+        guard let strongSelf = self else { return }
+        let signInViewController = SignInViewController(withViewModel: viewModel, withRouter: Router())
+        signInViewController.doneCallback = strongSelf.doneCallback
+        strongSelf.navigationController?.pushViewController(signInViewController, animated: true)
+      }).disposed(by: disposeBag)
+    viewModel.showSignUp
+      .subscribe(onNext: { [weak self] (viewModel) in
+        guard let strongSelf = self else { return }
+        let signUpViewController = SignUpViewController(withViewModel: viewModel, withRouter: Router())
+        signUpViewController.doneCallback = strongSelf.doneCallback
+        strongSelf.navigationController?.pushViewController(signUpViewController, animated: true)
+      }).disposed(by: disposeBag)
+  }
+
+
   private func setupView() {
     logoImageView.image = UIImage(named: "catlogo")
     logoImageView.contentMode = .scaleAspectFill
@@ -42,21 +60,6 @@ class WelcomeViewController: UIViewController {
     signUpButton.addTarget(self, action: #selector(signUp), for: .touchUpInside)
     signUpButton.setTitle(viewModel?.signUpButtonTitle, for: .normal)
     signInButton.setTitle(viewModel?.signInButtonTitle, for: .normal)
-  }
-
-  private func observeViewModel() {
-    viewModel.showSignIn.subscribe(onNext: { [weak self] (viewModel) in
-      guard let strongSelf = self else { return }
-      let signInViewController = SignInViewController(viewModel: viewModel)
-      signInViewController.doneCallback = strongSelf.doneCallback
-      strongSelf.navigationController?.pushViewController(signInViewController, animated: true)
-    }).disposed(by: disposeBag)
-    viewModel.showSignUp.subscribe(onNext: { [weak self] (viewModel) in
-      guard let strongSelf = self else { return }
-      let signUpViewController = SignUpViewController(viewModel: viewModel)
-      signUpViewController.doneCallback = strongSelf.doneCallback
-      strongSelf.navigationController?.pushViewController(signUpViewController, animated: true)
-    }).disposed(by: disposeBag)
   }
 
   @objc
