@@ -1,13 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CatDetailViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CatDetailViewController" customModule="CatFacts" customModuleProvider="target">
             <connections>
+                <outlet property="catDetailImageView" destination="K71-Ht-dZy" id="8Wk-1e-xIz"/>
+                <outlet property="catDetailName" destination="aXz-lD-FCg" id="2ei-NQ-epO"/>
+                <outlet property="catDetailText" destination="aWa-Rh-QFP" id="tQk-Kc-DG6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +22,48 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="5Uh-2P-gwD">
+                    <rect key="frame" x="5" y="214" width="365" height="239"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K71-Ht-dZy">
+                            <rect key="frame" x="102.5" y="0.0" width="160" height="160"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="160" id="Lcl-Yu-lpK"/>
+                                <constraint firstAttribute="height" constant="160" id="YGA-kr-8hX"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXz-lD-FCg">
+                            <rect key="frame" x="0.0" y="179" width="365" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWa-Rh-QFP">
+                            <rect key="frame" x="0.0" y="218.5" width="365" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="aWa-Rh-QFP" firstAttribute="leading" secondItem="5Uh-2P-gwD" secondAttribute="leading" id="6Uq-iP-EGL"/>
+                        <constraint firstAttribute="bottom" secondItem="aWa-Rh-QFP" secondAttribute="bottom" id="8Fc-dY-gU8"/>
+                        <constraint firstAttribute="trailing" secondItem="aXz-lD-FCg" secondAttribute="trailing" id="Vm4-yj-xyX"/>
+                        <constraint firstItem="aXz-lD-FCg" firstAttribute="leading" secondItem="5Uh-2P-gwD" secondAttribute="leading" id="bDj-BR-WnA"/>
+                        <constraint firstAttribute="trailing" secondItem="aWa-Rh-QFP" secondAttribute="trailing" id="lID-6D-iVU"/>
+                    </constraints>
+                </stackView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5Uh-2P-gwD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1Dj-MH-keN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Uh-2P-gwD" secondAttribute="trailing" constant="5" id="RXR-Ah-laB"/>
+                <constraint firstItem="5Uh-2P-gwD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="a2Z-sP-8jm"/>
+                <constraint firstItem="5Uh-2P-gwD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="utW-Za-bg8"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="120.98950524737631"/>
         </view>
     </objects>
 </document>

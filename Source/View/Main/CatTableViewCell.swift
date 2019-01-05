@@ -30,7 +30,15 @@ class CatTableViewCell: UITableViewCell {
   }
 
   private func setupView() {
-    imageView?.contentMode = .scaleAspectFit
+    catImageView?.contentMode = .scaleToFill
+    catImageView?.layer.cornerRadius = 15
+    catImageView?.layer.borderWidth = 0.5
+    catNameLabel.backgroundColor = ViewConfig.Colors.background
+    catTextLabel.backgroundColor = ViewConfig.Colors.background
+    catNameLabel.textColor = ViewConfig.Colors.textWhite
+    catTextLabel.textColor = ViewConfig.Colors.textWhite
+    backgroundView?.backgroundColor = ViewConfig.Colors.background
+    backgroundColor = ViewConfig.Colors.background
     guard let viewModel = viewModel else { return }
     catImageView.image = viewModel.image
     catNameLabel.text = viewModel.name

@@ -28,8 +28,7 @@ class MainViewController: UITableViewController {
   }
 
   private func observeViewModel() {
-    viewModel
-      .onFinish
+    viewModel.onFinish
       .subscribe(onNext: { [weak self] in
         guard let strongSelf = self else { return }
         strongSelf.doneCallback?()
