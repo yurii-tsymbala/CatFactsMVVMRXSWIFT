@@ -10,6 +10,6 @@ import UIKit
 
 struct CatCellViewModel {
   let image: UIImage = UIImage(named: "cat")!
-  let name: String
-  let text: String
+  var name: String
+  var text: String
 }

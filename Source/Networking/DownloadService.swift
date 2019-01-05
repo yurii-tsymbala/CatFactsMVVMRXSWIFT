@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum DownloadServiceError: String {
   case firstError = ""
@@ -28,35 +29,44 @@ protocol DownloadServiceType {
 
 class DownloadService: DownloadServiceType {
 
-  private var cats: [Cat]!
+   var cellViewModels = [CatCellViewModel]()
 
   func fetchDataFromJSON(completion: @escaping (Result<[CatCellViewModel], DownloadServiceError>) -> Void) {
-    completion(Result.success(generateCellViewModels()))
-    //    let jsonURL = URL(string: "https://cat-fact.herokuapp.com/facts")!
-    //    URLSession.shared.dataTask(with: jsonURL) { [weak self]  (data,_,error) in
-    //      guard let strongSelf = self else { return }
-    //      if error == nil {
-    //        guard let data = data else { completion(Result.failure(DownloadServiceError.thirdError)); return }
-    //        do {
-    //          let decoder = JSONDecoder()
-    //          strongSelf.cats = try decoder.decode([Cat].self, from: data)
-    //          if let successfullyParsedCats = strongSelf.cats {
-    //            // successfullyCats конвертнути в целлвюмоделс і передати в комплішн
-    //          } else {
-    //            completion(Result.failure(DownloadServiceError.fifthError))
-    //          }
-    //        } catch _ {
-    //          completion(Result.failure(DownloadServiceError.fourthError))
-    //        }
-    //      } else {
-    //        if let _ = error {
-    //          completion(Result.failure(DownloadServiceError.firstError))
-    //        } else {
-    //          completion(Result.failure(DownloadServiceError.secondError))
-    //        }
-    //      }
-    //      }.resume()
+    Alamofire.request("https://cat-fact.herokuapp.com/facts").responseJSON { [weak self] response in
+      guard let strongSelf = self else { return }
+      guard let json = response.result.value as? [String:Any] else {completion(Result.failure(DownloadServiceError.secondError));return}
+      guard let data = json["all"] as? [[String: Any]] else {completion(Result.failure(DownloadServiceError.thirdError)); return}
+      for dataItem in data {
+        var cellViewModel = CatCellViewModel(name: "-", text: "-")
+        let textforCell = dataItem["text"] as? String ?? "-"
+        cellViewModel.text = textforCell
+        let user = dataItem["user"] as? Dictionary<String, Any>
+        if let unwrappedUser = user {
+          for userInfo in unwrappedUser {
+            if userInfo.key == "name" {
+              let nameInfoTuple = userInfo.value as! Dictionary<String, Any>
+              for names in nameInfoTuple {
+                if names.key == "first" {
+                  let firstName = names.value as! String
+                  cellViewModel.name = firstName
+                }
+                if names.key == "last" {
+                  cellViewModel.name.append(contentsOf: " \(names.value)")
+                }
+              }
+              strongSelf.cellViewModels.append(cellViewModel) // finish
+            } else {
+              strongSelf.cellViewModels.append(cellViewModel)
+            }
+          }
+        } else {
+          strongSelf.cellViewModels.append(cellViewModel)
+        }
+      }
+      completion(Result.success(strongSelf.cellViewModels))
+    }
   }
+
 
   private func generateCellViewModels() -> [CatCellViewModel] {
     var array = [CatCellViewModel]()
