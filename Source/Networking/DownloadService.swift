@@ -23,10 +23,38 @@ enum DownloadServiceError: Error {
 }
 
 protocol DownloadServiceType {
-
+  func fetchDataFromJSON(completion: @escaping (Result<[Cat], Error>) -> Void)
 }
 
 class DownloadService: DownloadServiceType {
-  
+
+  private var cats: [Cat]!
+
+  func fetchDataFromJSON(completion: @escaping (Result<[Cat], Error>) -> Void) {
+    let jsonURL = URL(string: "https://cat-fact.herokuapp.com/facts")!
+    URLSession.shared.dataTask(with: jsonURL) { [weak self]  (data,_,error) in
+      guard let strongSelf = self else { return }
+      if error == nil {
+        guard let data = data else { completion(Result.failure(DownloadServiceError.thirdError)); return }
+        do {
+          let decoder = JSONDecoder()
+          strongSelf.cats = try decoder.decode([Cat].self, from: data)
+          if let successfullyParsedCats = strongSelf.cats {
+            // successfullyCats конвертнути в целлвюмоделс і передати в комплішн
+          } else {
+            completion(Result.failure(DownloadServiceError.fifthError))
+          }
+        } catch _ {
+          completion(Result.failure(DownloadServiceError.fourthError))
+        }
+      } else {
+        if let _ = error {
+          completion(Result.failure(DownloadServiceError.firstError))
+        } else {
+          completion(Result.failure(DownloadServiceError.secondError))
+        }
+      }
+      }.resume()
+  }
 }
 

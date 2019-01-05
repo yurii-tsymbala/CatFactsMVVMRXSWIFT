@@ -14,7 +14,6 @@
 		4B38446F21DFB7CF0064F731 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38446E21DFB7CF0064F731 /* SignUpViewModel.swift */; };
 		4B38447121DFB7DB0064F731 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447021DFB7DB0064F731 /* SignInViewModel.swift */; };
 		4B38447321DFB7F80064F731 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447221DFB7F80064F731 /* UserDefaultsService.swift */; };
-		4B38447521DFB8130064F731 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447421DFB8130064F731 /* User.swift */; };
 		4B38449721DFC89A0064F731 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449621DFC89A0064F731 /* RootViewController.swift */; };
 		4B38449921DFD25E0064F731 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449821DFD25E0064F731 /* MainViewModel.swift */; };
 		4B38449E21DFD6870064F731 /* KeyboardContentAdjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449D21DFD6870064F731 /* KeyboardContentAdjustable.swift */; };
@@ -32,6 +31,8 @@
 		4B3844B721DFFB2B0064F731 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844B621DFFB2B0064F731 /* UserDefaults.swift */; };
 		4B3844BA21E02EC40064F731 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844B821E02EC40064F731 /* MainViewController.swift */; };
 		4B3844BB21E02EC40064F731 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3844B921E02EC40064F731 /* MainViewController.xib */; };
+		4B3844BD21E038F80064F731 /* CatCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844BC21E038F80064F731 /* CatCellViewModel.swift */; };
+		4B3844C121E03C5E0064F731 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844C021E03C5E0064F731 /* Cat.swift */; };
 		4B9248DD21DFB29D00873821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9248DC21DFB29D00873821 /* AppDelegate.swift */; };
 		4B9248E421DFB29E00873821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B9248E321DFB29E00873821 /* Assets.xcassets */; };
 		4B9248E721DFB29E00873821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9248E521DFB29E00873821 /* LaunchScreen.storyboard */; };
@@ -45,7 +46,6 @@
 		4B38446E21DFB7CF0064F731 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		4B38447021DFB7DB0064F731 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		4B38447221DFB7F80064F731 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
-		4B38447421DFB8130064F731 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4B38449621DFC89A0064F731 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4B38449821DFD25E0064F731 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4B38449D21DFD6870064F731 /* KeyboardContentAdjustable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardContentAdjustable.swift; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		4B3844B621DFFB2B0064F731 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		4B3844B821E02EC40064F731 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4B3844B921E02EC40064F731 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		4B3844BC21E038F80064F731 /* CatCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCellViewModel.swift; sourceTree = "<group>"; };
+		4B3844C021E03C5E0064F731 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		4B9248D921DFB29D00873821 /* CatFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9248DC21DFB29D00873821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B9248E321DFB29E00873821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,8 +128,8 @@
 		4B38446A21DFB7580064F731 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4B38447421DFB8130064F731 /* User.swift */,
 				4B3844B621DFFB2B0064F731 /* UserDefaults.swift */,
+				4B3844C021E03C5E0064F731 /* Cat.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +142,7 @@
 				4B38447021DFB7DB0064F731 /* SignInViewModel.swift */,
 				4B38449821DFD25E0064F731 /* MainViewModel.swift */,
 				4B3844B121DFE9AE0064F731 /* AlertViewModel.swift */,
+				4B3844BC21E038F80064F731 /* CatCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -407,13 +410,14 @@
 				4B38447321DFB7F80064F731 /* UserDefaultsService.swift in Sources */,
 				4B3844A221DFD6A60064F731 /* CustomTextField.swift in Sources */,
 				4B3844B221DFE9AE0064F731 /* AlertViewModel.swift in Sources */,
-				4B38447521DFB8130064F731 /* User.swift in Sources */,
+				4B3844C121E03C5E0064F731 /* Cat.swift in Sources */,
 				4B38449921DFD25E0064F731 /* MainViewModel.swift in Sources */,
 				4B38446821DFB7350064F731 /* Result.swift in Sources */,
 				4B38446F21DFB7CF0064F731 /* SignUpViewModel.swift in Sources */,
 				4B3844A421DFD6AE0064F731 /* ViewConfig.swift in Sources */,
 				4B38446521DFB6A70064F731 /* DownloadService.swift in Sources */,
 				4B3844AF21DFD89E0064F731 /* WelcomeViewController.swift in Sources */,
+				4B3844BD21E038F80064F731 /* CatCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

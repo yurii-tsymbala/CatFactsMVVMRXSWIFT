@@ -49,11 +49,11 @@ class MainViewController: UITableViewController {
   }
 
   private func setupNavigationBar() {
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: viewModel.navigatiomItemTitle,
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: viewModel.navigationItemRightBarButtonItemTitle,
                                                         style: .plain,
                                                         target: self,
                                                         action: #selector(logOut))
-    navigationItem.title = viewModel.navigationItemRightBarButtonItemTitle
+    navigationItem.title = viewModel.navigatiomItemTitle
     navigationItem.rightBarButtonItem?.tintColor = ViewConfig.Colors.white
     navigationController?.navigationBar.barTintColor = ViewConfig.Colors.background
     navigationController?.navigationBar.backgroundColor = ViewConfig.Colors.background
