@@ -47,7 +47,6 @@ class MainViewController: UITableViewController {
     tableView.allowsSelection = false
     tableView.backgroundView?.backgroundColor = ViewConfig.Colors.background
     tableView.backgroundColor = ViewConfig.Colors.background
-
   }
 
   private func setupNavigationBar() {
