@@ -14,12 +14,6 @@ enum UserDefaultsServiceError: String {
   case thirdError = "Bad password confirmation"
   case fourthError = "Short password. Use more then 5 symbols"
   case fifthError = "Wrong password"
-  case sixthError
-  case seventhError
-  case eighthError
-  case ninthError
-  case tenthError
-  case eleventhError
 }
 
 final class UserDefaultsService {

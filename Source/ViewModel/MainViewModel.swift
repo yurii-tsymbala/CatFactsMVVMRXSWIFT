@@ -7,10 +7,19 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 protocol MainViewModelType {
+  func logOut()
+  var onFinish: PublishSubject<Void> { get }
 }
 
 class MainViewModel : MainViewModelType {
+  var onFinish = PublishSubject<Void>()
+
+  func logOut() {
+    onFinish.onNext(())
+  }
   
 }

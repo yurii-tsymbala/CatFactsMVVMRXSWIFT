@@ -20,8 +20,36 @@ class MainViewController: UIViewController {
     self.viewModel = viewModel
   }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupView()
+    observeViewModel()
+  }
 
-    }
+  private func observeViewModel() {
+    viewModel
+      .onFinish
+      .subscribe(onNext: { [weak self] in
+        guard let strongSelf = self else { return }
+        strongSelf.doneCallback?()
+        print("esketit")
+      })
+      .disposed(by: disposeBag)
+  }
+
+  private func setupView() {
+    setupNavigationBar()
+  }
+
+  private func setupNavigationBar() {
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out",
+                                                        style: .plain,
+                                                        target: self,
+                                                        action: #selector(logOut))
+    navigationItem.title = "Cat Facts"
+  }
+
+  @objc func logOut() {
+    viewModel.logOut()
+  }
 }
