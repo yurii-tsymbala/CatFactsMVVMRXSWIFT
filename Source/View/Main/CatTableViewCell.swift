@@ -30,6 +30,7 @@ class CatTableViewCell: UITableViewCell {
   }
 
   private func setupView() {
+    selectionStyle = .none
     catImageView?.contentMode = .scaleToFill
     catImageView?.layer.cornerRadius = 15
     catImageView?.layer.borderWidth = 0.5

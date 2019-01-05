@@ -66,6 +66,7 @@ class MainViewController: UITableViewController {
     tableView.allowsMultipleSelection = false
     tableView.backgroundView?.backgroundColor = ViewConfig.Colors.background
     tableView.backgroundColor = ViewConfig.Colors.background
+    tableView.separatorColor = ViewConfig.Colors.grayDarkAlpha
     let catCellNib = UINib(nibName: catTableViewCellId, bundle: nil)
     tableView.register(catCellNib, forCellReuseIdentifier: catTableViewCellId)
     tableView.estimatedRowHeight = tableView.rowHeight
