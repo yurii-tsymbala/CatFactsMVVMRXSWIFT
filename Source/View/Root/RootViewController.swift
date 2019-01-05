@@ -12,6 +12,10 @@ final class RootViewController: UIViewController {
   private var userDefaultsService: UserDefaultsService!
   private var currentViewController: UIViewController?
 
+  override var preferredStatusBarStyle : UIStatusBarStyle {
+    return .lightContent
+  }
+
   convenience init(userDefaultsService: UserDefaultsService) {
     self.init()
     self.userDefaultsService = userDefaultsService

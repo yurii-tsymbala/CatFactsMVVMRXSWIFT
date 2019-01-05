@@ -14,7 +14,6 @@ class SignInViewController: UIViewController, KeyboardContentAdjustable {
   @IBOutlet private weak var emailTextField: CustomTextField!
   @IBOutlet private weak var passwordTextField: CustomTextField!
   @IBOutlet private weak var signInButton: CustomButton!
-
   var doneCallback: (() -> Void)?
   private var viewModel: SignInViewModelType!
   private let disposeBag = DisposeBag()

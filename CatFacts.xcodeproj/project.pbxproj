@@ -15,8 +15,6 @@
 		4B38447121DFB7DB0064F731 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447021DFB7DB0064F731 /* SignInViewModel.swift */; };
 		4B38447321DFB7F80064F731 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447221DFB7F80064F731 /* UserDefaultsService.swift */; };
 		4B38447521DFB8130064F731 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38447421DFB8130064F731 /* User.swift */; };
-		4B38448821DFBDD40064F731 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38448621DFBDD40064F731 /* MainViewController.swift */; };
-		4B38448921DFBDD40064F731 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B38448721DFBDD40064F731 /* MainViewController.xib */; };
 		4B38449721DFC89A0064F731 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449621DFC89A0064F731 /* RootViewController.swift */; };
 		4B38449921DFD25E0064F731 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449821DFD25E0064F731 /* MainViewModel.swift */; };
 		4B38449E21DFD6870064F731 /* KeyboardContentAdjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B38449D21DFD6870064F731 /* KeyboardContentAdjustable.swift */; };
@@ -32,6 +30,8 @@
 		4B3844B221DFE9AE0064F731 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844B121DFE9AE0064F731 /* AlertViewModel.swift */; };
 		4B3844B521DFEC2B0064F731 /* EmailValidationStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844B421DFEC2B0064F731 /* EmailValidationStringExtension.swift */; };
 		4B3844B721DFFB2B0064F731 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844B621DFFB2B0064F731 /* UserDefaults.swift */; };
+		4B3844BA21E02EC40064F731 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3844B821E02EC40064F731 /* MainViewController.swift */; };
+		4B3844BB21E02EC40064F731 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3844B921E02EC40064F731 /* MainViewController.xib */; };
 		4B9248DD21DFB29D00873821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9248DC21DFB29D00873821 /* AppDelegate.swift */; };
 		4B9248E421DFB29E00873821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B9248E321DFB29E00873821 /* Assets.xcassets */; };
 		4B9248E721DFB29E00873821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9248E521DFB29E00873821 /* LaunchScreen.storyboard */; };
@@ -46,8 +46,6 @@
 		4B38447021DFB7DB0064F731 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		4B38447221DFB7F80064F731 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		4B38447421DFB8130064F731 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		4B38448621DFBDD40064F731 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		4B38448721DFBDD40064F731 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		4B38449621DFC89A0064F731 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4B38449821DFD25E0064F731 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4B38449D21DFD6870064F731 /* KeyboardContentAdjustable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardContentAdjustable.swift; sourceTree = "<group>"; };
@@ -63,6 +61,8 @@
 		4B3844B121DFE9AE0064F731 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		4B3844B421DFEC2B0064F731 /* EmailValidationStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidationStringExtension.swift; sourceTree = "<group>"; };
 		4B3844B621DFFB2B0064F731 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		4B3844B821E02EC40064F731 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4B3844B921E02EC40064F731 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		4B9248D921DFB29D00873821 /* CatFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9248DC21DFB29D00873821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B9248E321DFB29E00873821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,10 +115,10 @@
 			children = (
 				4B38449C21DFD6750064F731 /* Common */,
 				4B38449521DFC8800064F731 /* Root */,
-				4B38447D21DFBD810064F731 /* Main */,
+				4B38447621DFBD060064F731 /* Welcome */,
 				4B38447C21DFBD6B0064F731 /* SignIn */,
 				4B38447B21DFBD5B0064F731 /* SignUp */,
-				4B38447621DFBD060064F731 /* Welcome */,
+				4B38447D21DFBD810064F731 /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,8 +174,8 @@
 		4B38447D21DFBD810064F731 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				4B38448621DFBDD40064F731 /* MainViewController.swift */,
-				4B38448721DFBDD40064F731 /* MainViewController.xib */,
+				4B3844B821E02EC40064F731 /* MainViewController.swift */,
+				4B3844B921E02EC40064F731 /* MainViewController.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 				4B3844AB21DFD85C0064F731 /* SignUpViewController.xib in Resources */,
 				4B9248E421DFB29E00873821 /* Assets.xcassets in Resources */,
 				4B3844A821DFD7FF0064F731 /* SignInViewController.xib in Resources */,
-				4B38448921DFBDD40064F731 /* MainViewController.xib in Resources */,
+				4B3844BB21E02EC40064F731 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,9 +393,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B38448821DFBDD40064F731 /* MainViewController.swift in Sources */,
 				4B38449721DFC89A0064F731 /* RootViewController.swift in Sources */,
 				4B3844B521DFEC2B0064F731 /* EmailValidationStringExtension.swift in Sources */,
+				4B3844BA21E02EC40064F731 /* MainViewController.swift in Sources */,
 				4B38449E21DFD6870064F731 /* KeyboardContentAdjustable.swift in Sources */,
 				4B38447121DFB7DB0064F731 /* SignInViewModel.swift in Sources */,
 				4B3844B721DFFB2B0064F731 /* UserDefaults.swift in Sources */,
