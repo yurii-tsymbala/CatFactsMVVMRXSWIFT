@@ -16,7 +16,7 @@ class MainViewController: UITableViewController {
   private let disposeBag = DisposeBag()
   private let catTableViewCellId = "CatTableViewCell"
   private var router: Router!
-  private var myActivityIndicator: UIActivityIndicatorView!
+  private var myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
 
   convenience init(withViewModel viewModel: MainViewModelType,withRouter router: Router) {
     self.init()
@@ -24,6 +24,10 @@ class MainViewController: UITableViewController {
     self.viewModel = viewModel
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(true)
+    setupActivityIndicator()
+  }
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
@@ -65,13 +69,12 @@ class MainViewController: UITableViewController {
   private func setupView() {
     view.backgroundColor = ViewConfig.Colors.background
     setupNavigationBar()
-    setupActivityIndicator()
     setupTableView()
   }
 
   private func setupActivityIndicator() {
-     myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
-    myActivityIndicator.center = view.center
+    myActivityIndicator.center = CGPoint(x:view.bounds.size.width/2.0,
+                                         y: view.bounds.size.height/2.0);
     view.addSubview(myActivityIndicator)
   }
 
