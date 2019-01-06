@@ -30,8 +30,8 @@ class DownloadService: DownloadServiceType {
       guard let json = response.result.value as? [String:Any] else {completion(Result.failure(DownloadServiceError.secondError));return}
       guard let data = json["all"] as? [[String: Any]] else {completion(Result.failure(DownloadServiceError.thirdError)); return}
       for dataItem in data {
-        var cellViewModel = CatCellViewModel(name: "-", text: "-")
-        let textforCell = dataItem["text"] as? String ?? "-"
+        var cellViewModel = CatCellViewModel(name: "", text: "")
+        let textforCell = dataItem["text"] as? String ?? ""
         cellViewModel.text = textforCell
         let user = dataItem["user"] as? Dictionary<String, Any>
         if let unwrappedUser = user {
@@ -41,7 +41,8 @@ class DownloadService: DownloadServiceType {
               for names in nameInfoTuple {
                 if names.key == "first" {
                   let firstName = names.value as! String
-                  cellViewModel.name = firstName
+                  let fullName = (("\(firstName) ") + cellViewModel.name)
+                  cellViewModel.name = fullName
                 }
                 if names.key == "last" {
                   cellViewModel.name.append(" ")
@@ -53,6 +54,9 @@ class DownloadService: DownloadServiceType {
             }
           }
         } else {
+          if cellViewModel.name.isEmpty {
+            cellViewModel.name = "Unnamed"
+          }
           strongSelf.cellViewModels.append(cellViewModel)
         }
       }
