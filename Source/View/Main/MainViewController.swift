@@ -113,12 +113,21 @@ class MainViewController: UITableViewController {
                                                         style: .plain,
                                                         target: self,
                                                         action: #selector(logOut))
+    navigationItem.leftBarButtonItem = UIBarButtonItem(title: viewModel.navigationItemLeftBarButtonItemTitle,
+                                                       style: .plain,
+                                                       target: self,
+                                                       action: #selector(reloadData))
     navigationItem.title = viewModel.navigatiomItemTitle
     navigationItem.rightBarButtonItem?.tintColor = ViewConfig.Colors.white
+      navigationItem.leftBarButtonItem?.tintColor = ViewConfig.Colors.white
     navigationController?.navigationBar.barTintColor = ViewConfig.Colors.background
     navigationController?.navigationBar.backgroundColor = ViewConfig.Colors.background
     navigationController?.navigationBar.isTranslucent = false
     navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ViewConfig.Colors.white]
+  }
+
+  @objc func reloadData() {
+    viewModel.fetchData()
   }
 
   @objc func logOut() {

@@ -13,6 +13,7 @@ import RxCocoa
 protocol MainViewModelType {
   var navigatiomItemTitle: String { get }
   var navigationItemRightBarButtonItemTitle: String { get }
+  var navigationItemLeftBarButtonItemTitle: String { get }
   var numberOfCells: Int { get }
   var onFinish: PublishSubject<Void> { get }
   var reloadData: PublishSubject<Void> { get }
@@ -29,11 +30,13 @@ class MainViewModel : MainViewModelType {
   private struct Strings {
     static let navigatiomItemTitle = NSLocalizedString("Cat Facts", comment: "")
     static let navigationItemRightBarButtonItemTitle = NSLocalizedString("Log Out", comment: "")
+    static let navigationItemLeftBarButtonItemTitle = NSLocalizedString("Reload Data", comment: "")
   }
   private let downloadService: DownloadServiceType
   private var cellViewModels: [CatCellViewModel] = []
 
   var navigationItemRightBarButtonItemTitle = Strings.navigationItemRightBarButtonItemTitle
+  var navigationItemLeftBarButtonItemTitle = Strings.navigationItemLeftBarButtonItemTitle
   var navigatiomItemTitle = Strings.navigatiomItemTitle
   var onFinish = PublishSubject<Void>()
   var reloadData = PublishSubject<Void>()
@@ -67,8 +70,8 @@ class MainViewModel : MainViewModelType {
         switch fetchResult {
         case .success(let catCellViewModels):
           strongSelf.startAnimating.onCompleted()
-          //MARK:
-          strongSelf.cellViewModels = catCellViewModels // порефакторити
+          strongSelf.cellViewModels.removeAll()
+          strongSelf.cellViewModels = catCellViewModels
           strongSelf.reloadData.onNext(())
         case .failure(let error):
           strongSelf.startAnimating.onCompleted()

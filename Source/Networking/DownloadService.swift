@@ -41,9 +41,9 @@ class DownloadService: DownloadServiceType {
                 if names.key == "first" {
                   let firstName = names.value as! String
                   cellViewModel.name = firstName
-                  cellViewModel.name.append(" ")
                 }
                 if names.key == "last" {
+                  cellViewModel.name.append(" ")
                   let lastName = names.value as! String
                   cellViewModel.name.append(contentsOf: lastName)
                 }
