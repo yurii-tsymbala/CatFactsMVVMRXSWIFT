@@ -16,14 +16,15 @@ enum DownloadServiceError: String {
 }
 
 protocol DownloadServiceType {
-  func fetchDataFromJSON(completion: @escaping (Result<[CatCellViewModel], DownloadServiceError>) -> Void)
+  typealias DownloadHandler = (Result<[CatCellViewModel], DownloadServiceError>) -> Void
+  func fetchDataFromJSON(completion: @escaping DownloadHandler)
 }
 
 class DownloadService: DownloadServiceType {
 
    private var cellViewModels = [CatCellViewModel]()
 
-  func fetchDataFromJSON(completion: @escaping (Result<[CatCellViewModel], DownloadServiceError>) -> Void) {
+  func fetchDataFromJSON(completion: @escaping DownloadHandler) {
     Alamofire.request("https://cat-fact.herokuapp.com/facts").responseJSON { [weak self] response in
       guard let strongSelf = self else { return }
       guard let json = response.result.value as? [String:Any] else {completion(Result.failure(DownloadServiceError.secondError));return}

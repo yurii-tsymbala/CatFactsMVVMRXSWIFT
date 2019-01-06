@@ -64,6 +64,12 @@ class MainViewController: UITableViewController {
         strongSelf.showCatDetail(withViewModel: catDetailViewModel)
       })
       .disposed(by: disposeBag)
+    viewModel.showAlert
+      .subscribe(onNext: { [weak self] alertViewModel in
+        guard let strongSelf = self else { return }
+        strongSelf.showAlert(withViewModel: alertViewModel)
+      })
+      .disposed(by: disposeBag)
   }
 
   private func setupView() {
