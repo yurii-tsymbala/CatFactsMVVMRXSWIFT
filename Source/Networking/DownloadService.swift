@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 
 enum DownloadServiceError: String {
-  case firstError = "Bad Url"
-  case secondError = "Bad JSON"
-  case thirdError  = "Type Cast Error"
+  case firstError = "Request Error"
+  case secondError = "Data Response Error"
+  case thirdError  = "Json Decoding Error"
 }
 
 protocol DownloadServiceType {
@@ -22,46 +22,33 @@ protocol DownloadServiceType {
 
 class DownloadService: DownloadServiceType {
 
-   private var cellViewModels = [CatCellViewModel]()
+  private var cellViewModels = [CatCellViewModel]()
 
   func fetchDataFromJSON(completion: @escaping DownloadHandler) {
-    Alamofire.request("https://cat-fact.herokuapp.com/facts").responseJSON { [weak self] response in
+    let jsonURL = URL(string: "https://cat-fact.herokuapp.com/facts")!
+    URLSession.shared.dataTask(with: jsonURL) { [weak self]  (dataResponse,_,error) in
       guard let strongSelf = self else { return }
-      guard let json = response.result.value as? [String:Any] else {completion(Result.failure(DownloadServiceError.secondError));return}
-      guard let data = json["all"] as? [[String: Any]] else {completion(Result.failure(DownloadServiceError.thirdError)); return}
-      for dataItem in data {
-        var cellViewModel = CatCellViewModel(name: "", text: "")
-        let textforCell = dataItem["text"] as? String ?? ""
-        cellViewModel.text = textforCell
-        let user = dataItem["user"] as? Dictionary<String, Any>
-        if let unwrappedUser = user {
-          for userInfo in unwrappedUser {
-            if userInfo.key == "name" {
-              let nameInfoTuple = userInfo.value as! Dictionary<String, Any>
-              for names in nameInfoTuple {
-                if names.key == "first" {
-                  let firstName = names.value as! String
-                  let fullName = (("\(firstName) ") + cellViewModel.name)
-                  cellViewModel.name = fullName
-                }
-                if names.key == "last" {
-                  cellViewModel.name.append(" ")
-                  let lastName = names.value as! String
-                  cellViewModel.name.append(contentsOf: lastName)
-                }
-              }
-              strongSelf.cellViewModels.append(cellViewModel)
+      if error == nil {
+        guard let dataResponse = dataResponse else { completion(Result.failure(DownloadServiceError.secondError)); return }
+        do {
+          let json = try JSONDecoder().decode(Cats.self, from: dataResponse)
+          for cat in json.cats {
+            if let catUserName = cat.user?.name.fullName {
+              strongSelf.cellViewModels.append(CatCellViewModel(name: catUserName,
+                                                                text: cat.text))
+            } else {
+              strongSelf.cellViewModels.append(CatCellViewModel(name: "Unnamed",
+                                                                text: cat.text))
             }
           }
-        } else {
-          if cellViewModel.name.isEmpty {
-            cellViewModel.name = "Unnamed"
-          }
-          strongSelf.cellViewModels.append(cellViewModel)
+          completion(Result.success(strongSelf.cellViewModels))
+        } catch _ {
+          completion(Result.failure(DownloadServiceError.thirdError))
         }
+      } else {
+        completion(Result.failure(DownloadServiceError.firstError))
       }
-      completion(Result.success(strongSelf.cellViewModels))
-    }
+      }.resume()
   }
 }
 

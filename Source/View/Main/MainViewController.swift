@@ -39,7 +39,9 @@ class MainViewController: UITableViewController {
     viewModel.startAnimating
       .subscribe(onNext: { [weak self] in
         guard let strongSelf = self else {return}
-        strongSelf.startAnimating()
+        DispatchQueue.main.async {
+          strongSelf.startAnimating()
+        }
         }, onCompleted: { [weak self] in
           guard let strongSelf = self else {return}
           DispatchQueue.main.async {
@@ -55,7 +57,9 @@ class MainViewController: UITableViewController {
     viewModel.reloadData
       .subscribe(onNext: { [weak self] in
         guard let strongSelf = self else { return }
-        strongSelf.tableView.reloadData()
+        DispatchQueue.main.async {
+          strongSelf.tableView.reloadData()
+        }
       })
       .disposed(by: disposeBag)
     viewModel.showCatDetail
@@ -67,7 +71,9 @@ class MainViewController: UITableViewController {
     viewModel.showAlert
       .subscribe(onNext: { [weak self] alertViewModel in
         guard let strongSelf = self else { return }
+        DispatchQueue.main.async {
         strongSelf.showAlert(withViewModel: alertViewModel)
+        }
       })
       .disposed(by: disposeBag)
   }
@@ -119,21 +125,12 @@ class MainViewController: UITableViewController {
                                                         style: .plain,
                                                         target: self,
                                                         action: #selector(logOut))
-    navigationItem.leftBarButtonItem = UIBarButtonItem(title: viewModel.navigationItemLeftBarButtonItemTitle,
-                                                       style: .plain,
-                                                       target: self,
-                                                       action: #selector(reloadData))
     navigationItem.title = viewModel.navigatiomItemTitle
     navigationItem.rightBarButtonItem?.tintColor = ViewConfig.Colors.white
-      navigationItem.leftBarButtonItem?.tintColor = ViewConfig.Colors.white
     navigationController?.navigationBar.barTintColor = ViewConfig.Colors.background
     navigationController?.navigationBar.backgroundColor = ViewConfig.Colors.background
     navigationController?.navigationBar.isTranslucent = false
     navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ViewConfig.Colors.white]
-  }
-
-  @objc func reloadData() {
-    viewModel.fetchData()
   }
 
   @objc func logOut() {

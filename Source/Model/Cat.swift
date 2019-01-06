@@ -8,14 +8,27 @@
 
 import Foundation
 
-struct Cat: Decodable {
-  let firstName: String
-  let lastName: String
-  let text: String
-
+struct Cats: Codable {
+  let cats: [Cat]
   enum CodingKeys: String, CodingKey {
-    case firstName = "first"
-    case lastName = "last"
-    case text = "text"
+    case cats = "all"
+  }
+}
+
+struct Cat: Codable {
+  let text: String
+  let user: User?
+}
+
+struct User: Codable {
+  let name: Name
+}
+
+struct Name: Codable {
+  let first: String
+  let last: String
+
+  var fullName: String {
+    return "\(first) \(last)"
   }
 }

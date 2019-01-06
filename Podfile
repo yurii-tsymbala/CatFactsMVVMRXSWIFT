@@ -3,5 +3,4 @@ use_frameworks!
 target 'CatFacts' do
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
-  pod 'Alamofire', '~> 4.4'
 end
