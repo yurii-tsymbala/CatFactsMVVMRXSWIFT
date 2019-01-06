@@ -10,10 +10,16 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+fileprivate let minimalPasswordLength = 5
+
 class SignInViewController: UIViewController, KeyboardContentAdjustable {
   @IBOutlet private weak var emailTextField: CustomTextField!
   @IBOutlet private weak var passwordTextField: CustomTextField!
+  @IBOutlet private weak var emailValidOutlet: UILabel!
+  @IBOutlet private weak var passwordValidOutlet: UILabel!
   @IBOutlet private weak var signInButton: CustomButton!
+  
+  @IBOutlet weak var stackView: UIStackView!
   var doneCallback: (() -> Void)?
   private var viewModel: SignInViewModelType!
   private var router: Router!
@@ -31,6 +37,7 @@ class SignInViewController: UIViewController, KeyboardContentAdjustable {
     observeViewModel()
     subscribeForKeyboard(visibleView: signInButton, disposeBag: disposeBag)
     hideKeyboardAfterTap()
+    setupValidation()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -38,8 +45,36 @@ class SignInViewController: UIViewController, KeyboardContentAdjustable {
     setupNavigationBar()
   }
 
+  private func setupValidation() {
+    emailValidOutlet.text = "Email is not valid"
+    passwordValidOutlet.text = "Password has to be at least \(minimalPasswordLength) characters"
+    let emailnameValid = emailTextField.rx.text.orEmpty
+      .map { $0.isValidEmail() }
+      .share(replay: 5) 
+    let passwordValid = passwordTextField.rx.text.orEmpty
+      .map { $0.count >= minimalPasswordLength }
+      .share(replay: 1)
+    let everythingValid = Observable.combineLatest(emailnameValid, passwordValid) { $0 && $1 }
+      .share(replay: 1)
+    emailnameValid
+      .bind(to: passwordTextField.rx.isEnabled)
+      .disposed(by: disposeBag)
+    emailnameValid
+      .bind(to: emailValidOutlet.rx.isHidden)
+      .disposed(by: disposeBag)
+    passwordValid
+      .bind(to: passwordValidOutlet.rx.isHidden)
+      .disposed(by: disposeBag)
+    everythingValid
+      .bind(to: signInButton.rx.isEnabled)
+      .disposed(by: disposeBag)
+  }
+
   private func setupView() {
+    setupStackView()
     view.backgroundColor = ViewConfig.Colors.background
+    emailValidOutlet.textColor = ViewConfig.Colors.blue
+    passwordValidOutlet.textColor = ViewConfig.Colors.blue
     emailTextField.autocorrectionType = .no
     passwordTextField.autocorrectionType = .no
     emailTextField.placeholder = viewModel.emailPlaceholder
@@ -54,6 +89,13 @@ class SignInViewController: UIViewController, KeyboardContentAdjustable {
     passwordTextField.tag = 1
     emailTextField.autocorrectionType = .no
     passwordTextField.autocorrectionType = .no
+  }
+
+  private func setupStackView() {
+    stackView.axis = .vertical
+    stackView.alignment = .fill
+    stackView.distribution = .fill
+    stackView.spacing = 10
   }
 
   private func setupNavigationBar() {

@@ -12,7 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="CatFacts" customModuleProvider="target">
             <connections>
+                <outlet property="emailValidOutlet" destination="mVH-71-glb" id="WFm-QL-rIn"/>
+                <outlet property="passwordValidOutlet" destination="6Qk-eQ-Bsm" id="joc-x7-qkJ"/>
                 <outlet property="signUpButton" destination="ye8-1O-GRK" id="Dsg-Kb-arC"/>
+                <outlet property="stackView" destination="R1P-Rd-y7s" id="gll-vE-UKW"/>
                 <outlet property="userEmailTextField" destination="PQ7-Wz-cJD" id="Qsg-9x-pBd"/>
                 <outlet property="userPasswordConfirmTextField" destination="Q2T-gP-M67" id="xdg-7o-DWf"/>
                 <outlet property="userPasswordTextField" destination="S9e-c0-Lxm" id="ryX-oh-OCb"/>
@@ -25,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="R1P-Rd-y7s">
-                    <rect key="frame" x="30" y="273" width="354" height="190"/>
+                    <rect key="frame" x="30" y="242.66666666666669" width="354" height="250.66666666666669"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQ7-Wz-cJD" customClass="CustomTextField" customModule="CatFacts" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
@@ -36,8 +39,14 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVH-71-glb">
+                            <rect key="frame" x="0.0" y="50.000000000000028" width="354" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9e-c0-Lxm" customClass="CustomTextField" customModule="CatFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="50" width="354" height="40"/>
+                            <rect key="frame" x="0.0" y="80.333333333333343" width="354" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="0Jt-On-pXJ"/>
                             </constraints>
@@ -45,8 +54,14 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qk-eQ-Bsm">
+                            <rect key="frame" x="0.0" y="130.33333333333334" width="354" height="20.333333333333343"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q2T-gP-M67" customClass="CustomTextField" customModule="CatFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="100" width="354" height="40"/>
+                            <rect key="frame" x="0.0" y="160.66666666666666" width="354" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="SAN-Sd-tcx"/>
                             </constraints>
@@ -55,7 +70,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-1O-GRK" customClass="CustomButton" customModule="CatFacts" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="150" width="354" height="40"/>
+                            <rect key="frame" x="0.0" y="210.66666666666666" width="354" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="sXb-ce-pfa"/>
                             </constraints>
@@ -72,7 +87,7 @@
                 <constraint firstItem="R1P-Rd-y7s" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zYZ-Po-FuE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-41" y="21"/>
+            <point key="canvasLocation" x="-42.028985507246382" y="20.380434782608699"/>
         </view>
     </objects>
 </document>
