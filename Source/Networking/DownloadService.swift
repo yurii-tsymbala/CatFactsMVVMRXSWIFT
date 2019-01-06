@@ -10,17 +10,9 @@ import Foundation
 import Alamofire
 
 enum DownloadServiceError: String {
-  case firstError = ""
-  case secondError
-  case thirdError
-  case fourthError
-  case fifthError
-  case sixthError
-  case seventhError
-  case eighthError
-  case ninthError
-  case tenthError
-  case eleventhError
+  case firstError = "Bad Url"
+  case secondError = "Bad JSON"
+  case thirdError  = "Type Cast Error"
 }
 
 protocol DownloadServiceType {
@@ -29,7 +21,7 @@ protocol DownloadServiceType {
 
 class DownloadService: DownloadServiceType {
 
-   var cellViewModels = [CatCellViewModel]()
+   private var cellViewModels = [CatCellViewModel]()
 
   func fetchDataFromJSON(completion: @escaping (Result<[CatCellViewModel], DownloadServiceError>) -> Void) {
     Alamofire.request("https://cat-fact.herokuapp.com/facts").responseJSON { [weak self] response in
@@ -49,12 +41,14 @@ class DownloadService: DownloadServiceType {
                 if names.key == "first" {
                   let firstName = names.value as! String
                   cellViewModel.name = firstName
+                  cellViewModel.name.append(" ")
                 }
                 if names.key == "last" {
-                  cellViewModel.name.append(contentsOf: " \(names.value)")
+                  let lastName = names.value as! String
+                  cellViewModel.name.append(contentsOf: lastName)
                 }
               }
-              strongSelf.cellViewModels.append(cellViewModel) // finish
+              strongSelf.cellViewModels.append(cellViewModel)
             }
           }
         } else {
@@ -63,24 +57,6 @@ class DownloadService: DownloadServiceType {
       }
       completion(Result.success(strongSelf.cellViewModels))
     }
-  }
-
-
-  private func generateCellViewModels() -> [CatCellViewModel] {
-    var array = [CatCellViewModel]()
-    let first = CatCellViewModel(name: "Tom", text: "Cat from Cartoons")
-    let second = CatCellViewModel(name: "Tom jerryy,Tom jerryy", text: "Cat from Cartoons,Cat from Cartoons")
-    let third = CatCellViewModel(name: "Tom jerryy,Tom jerryy,Tom jerryy", text: "Cat from Cartoons,Cat from Cartoons,Cat from Cartoons")
-    let fourth = CatCellViewModel(name: "Tom jerryy,Tom jerryy,Tom jerryy", text: "Great Cat")
-    let fifth = CatCellViewModel(name: "Tom", text: "Cats see and hear extremely well. They can see in the dark and hear many sounds that humans are not able to hear. To feel their way round, cats use their whiskers.")
-    let sixth = CatCellViewModel(name: "Tom jerryy lalallala", text: "Good Cat")
-    array.append(first)
-    array.append(second)
-    array.append(third)
-    array.append(fourth)
-    array.append(fifth)
-    array.append(sixth)
-    return array
   }
 }
 
