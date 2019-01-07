@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 enum DownloadServiceError: String {
   case firstError = "Request Error"

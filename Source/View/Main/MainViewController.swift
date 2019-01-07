@@ -72,7 +72,7 @@ class MainViewController: UITableViewController {
       .subscribe(onNext: { [weak self] alertViewModel in
         guard let strongSelf = self else { return }
         DispatchQueue.main.async {
-        strongSelf.showAlert(withViewModel: alertViewModel)
+          strongSelf.showAlert(withViewModel: alertViewModel)
         }
       })
       .disposed(by: disposeBag)
@@ -80,6 +80,7 @@ class MainViewController: UITableViewController {
 
   private func setupView() {
     view.backgroundColor = ViewConfig.Colors.background
+    myActivityIndicator.startAnimating()
     setupNavigationBar()
     setupTableView()
   }
@@ -153,8 +154,10 @@ extension MainViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: catTableViewCellId, for: indexPath) as! CatTableViewCell
-    cell.viewModel = viewModel.getCellViewModel(atIndex: indexPath.row)
+    let cell = tableView.dequeueReusableCell(withIdentifier: catTableViewCellId, for: indexPath)
+    if let catTableCell = cell as? CatTableViewCell {
+      catTableCell.viewModel = viewModel.getCellViewModel(atIndex: indexPath.row)
+    }
     return cell
   }
 
